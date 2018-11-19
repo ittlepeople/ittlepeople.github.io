@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Hello Hexo]]></title>
+    <url>%2F2018%2F11%2F19%2FHello-Hexo%2F</url>
+    <content type="text"><![CDATA[下载Node.js 安装Node.js 验证安装是否成功 1234打开cmdpathnode -vnpm -v 安装Hexo 1npm install -g hexo #-g表示全局安装, npm默认为当前项目安装 hexo 部署 123456789101112131415161718192021222324新建文件夹。 如：F:\blog打开cmd，切换到该文件夹目录。 如：F:\blog&gt;在该目录下操作如下： hexo init #新建博客目录 hexo new test_my_site hexo g #根据当前目录下文件生成静态网页 hexo s #启动服务器 常用命令：npm install hexo -g #安装Hexonpm update hexo -g #升级 hexo init #初始化博客命令简写hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot; #新建文章hexo g == hexo generate #生成hexo s == hexo server #启动服务预览hexo d == hexo deploy #部署hexo server #Hexo会监视文件变动并自动更新，无须重启服务器hexo server -s #静态模式hexo server -p 5000 #更改端口hexo server -i 192.168.1.1 #自定义 IPhexo clean #清除缓存，若是网页正常情况下可以忽略这条命令 推送网站 上面只是在本地预览，接下来要做的就是就是推送网站，也就是发布网站，让我们的网站可以被更多的人访问。在设置之前，需要解释一个概念，在blog根目录里的_config.yml文件称为站点配置文件。 进入根目录里的themes文件夹，里面也有个_config.yml文件，这个称为主题配置文件。 下一步将我们的Hexo与GitHub关联起来，打开站点的配置文件_config.yml，翻到最后修改为： 1234deploy: type: git repo: https://github.com/Shuang0420/Shuang0420.github.io.git branch: master]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F11%2F19%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
