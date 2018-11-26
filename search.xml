@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Scrapy学习笔记]]></title>
+    <url>%2F2018%2F11%2F26%2FScrapy%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[摘要：Scrapy 的安装及创建工程 Anaconda安装Scrapy 首先查看anaconda中是否装有scrapy工具包，具体方法如下：Anaconda Prompt / cmd命令中，输入 conda list,查看所有已经安装的工具包及版本号 如果没有发现scrapy，则执行第2步。 输入 conda install -c scrapinghub scrapy ，等待片刻后，提示需要安装的相关工具包 proceed下输入y，回车， 自动进行安装相关的库。 再一次通过conda list 查看，就可以看到scrapy已经在list中了。安装成功。 创建Scrapy项目 打开Anaconda Prompt，切换到想要创建的目录下面 12345cd D:\WorkSpace\Spider\# 执行下面语句创建scrapy工程scrapy startproject baidu_search# 将会自动生成了baidu_search目录和下面的文件创建baidu_search/baidu_search/spiders/baidu_search.py文件 参考资料 进入baidu_search/baidu_search/ 目录下，执行 1scrapy crawl baidu_search ​]]></content>
+      <categories>
+        <category>Scrapy</category>
+      </categories>
+      <tags>
+        <tag>Scrapy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PyNLPIR使用]]></title>
+    <url>%2F2018%2F11%2F26%2FPyNLPIR%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[摘要：pynlpir的安装及简单使用 安装PyNLPIR官网地址 1pip install PyNLPIR 初始化NLPIR123import pynlpir# 默认情况下，输入假定为unicode或UTF-8编码。如果您想使用不同的编码（例如GBK或BIG5）pynlpir.open(encoding=&apos;gbk&apos;) 切分文本1234# 词性标注 pos_tagging=True；词性标注显示英文/中文 pos_english=True； 词性标记的显示方式 pos_names='parent/child/all'# 返回的是tuple(token, pos)组成的列表，其中token就是切出来的词，pos就是语言属性# 调用segment方法指定的pos_names参数可以是'all', 'child', 'parent'，默认是parent， 表示获取该词性的最顶级词性，child表示获取该词性的最具体的信息，all表示获取该词性相关的所有词性信息，相当于从其顶级词性到该词性的一条路径pynlpir.segment(s, pos_tagging=True, pos_names='parent', pos_english=True) 1234s = &apos;NLPIR分词系统前身为2000年发布的ICTCLAS词法分析系统，从2009年开始，为了和以前工作进行大的区隔，并推广NLPIR自然语言处理与信息检索共享平台，调整命名为NLPIR分词系统。&apos;pynlpir.segment(s)# Sample output: [(&apos;NLPIR&apos;, &apos;noun&apos;), (&apos;分词&apos;, &apos;verb&apos;), (&apos;系统&apos;, &apos;noun&apos;), (&apos;前身&apos;, &apos;noun&apos;), (&apos;为&apos;, &apos;preposition&apos;), (&apos;2000年&apos;, &apos;time word&apos;), (&apos;发布&apos;, &apos;verb&apos;), . . . ] 如果不想词性标注，设置post_tagging为false： 123pynlpir.segment(s, pos_tagging=False)# Sample output: ['NLPIR', '分词', '系统', '前身', '为', '2000年', '发布', . . . ] 关键字1234# 获得多少个词：max_words=50； 显示关键字权重：weighted=Truepynlpir.get_key_words(s, max_words=5, weighted=True)# 关闭APIpynlpir.close()]]></content>
+      <categories>
+        <category>NLP</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[基于TextRank自动摘要]]></title>
     <url>%2F2018%2F11%2F23%2F%E5%9F%BA%E4%BA%8ETextRank%E8%87%AA%E5%8A%A8%E6%91%98%E8%A6%81%2F</url>
     <content type="text"><![CDATA[摘要：本文主要讲解了TextRank算法和基于TextRank进行文本自动摘要提取 TextRank算法经典的TextRank算法是在 Google公司PageRank算法的启发下，利用投票的原理让每一个节点为它的邻居节点投赞成票，票的权重取决于节点本身的票数 。这是一个“先有蛋还是先有鸡”的悖论。TextRank算法借鉴了PageRank的做法，采用矩阵迭代收敛的方式解决了这个悖论。 TextRank网络图 G=(V,E,W) V : 节点集合。 V={V1,V2, … , Vn} 是由n个元素 Vi (1&lt;=i&lt;=n) 所构成的集合。 E: 边的集合。以 V 中各个 Vi 为节点并以节点的相似关系为边 E=｛(Vi, Vj) | Vi,Vj属于V, w_ij != 0｝ 即边的权重不为0 W: 边上权重的集合。w_ij 是节点 V_i 与 V_j 间边的权重值，通过距离相似度计算函数计算得出（如：欧式距离、Jaccard 或余弦函数等） 相似度矩阵：计算边的权值 该相似度矩阵为对称矩阵，对角线上元素的值为1. 迭代计算公式：迭代计算各个节点的权重 WS(V_i) : 节点 V_i 的权重值（称为PR值） d: 阻尼系数，一般设置为0.85 In(V_i) : 指向V_i 的节点集合 Out(V_i) : V_i 所指向的节点集合 |Out(V_j)| : 集合 Out(V_j) 中元素的个数 上式中左边表示 V_i 的权重，右侧的求和表示每个相邻节点对本节点的贡献程度。求和的分子 w_ij 表示 V_i 和 V_j 间的相似程度，分母为一个加权和，WS(V_j) 代表上一次迭代后节点 V_j 的权重值。 由于计算节点的权重时又需要用到节点本身的权重，因此需要进行迭代。假设每个节点的权重值初始化均为 1/|V|, 即 B_0 = (1/|V|, 1/|V|, … , 1/|V|)T ,经过若干次迭代计算后可收敛。 当两次迭代的结果B_i 和 B_i-1 差别非常小并且接近于0时停止迭代计算。一般经过20-30次迭代就可以达到收敛。 文本的 TextRank 网络图构造文本预处理及特种选择给定一段中文文本，将每个句子作为一个窗口进行分词得到该句子的各个特征项。由于这些特征项的维数非常高，存在许多对摘要提取无用的特征，因此 利用停用词表去掉对这些无用的词，并进行敏感词的过滤 根据 Zipf 法则（也称幂集定律）合理的删除大量低频词 来降低特征空间的维数。 为减少冗余度和提高效果，可以采取特征词相关性分析、聚类、同义词和近义词归并等策略。 预处理之后得到特征词向量 利用相似度函数计算句子之间的相似度，并将其作为句子间边的权重。如果不存在相似度，则他们之间没有边。 给段中文文本D，假定包含n个句子， D={P_1, P_2, … , P_n}, 其中P_i按D 中出现的先后顺序进行排序的句子。于是根据上图的预处理流程对D及P_i进行处理可得： D的特征词向量 每句的特征词向量 用TF-IDF权值法作为特征词的评估函数 （考虑文档长度对权值的影响，并弱化瓷瓶差异较大所带来的影响）评估函数为： N 为分词工具中词典所包含的特征词的总数，N_keyj 为 N_keyj 在 N 中出现的次数。 根据计算结果对特征词进行排序，并取前几个特征词就可得到文档对应的关键词列表。 TextRank 网络图给定各个句子的特征向量空间，可以通过各种距离相似度计算函数计算句子相似度。 余弦相似度函数： 句子相似度矩阵： w_ij 表示句子 P_i 和 P_j 间的相似度。对称矩阵，对角线为1. 以D 中各句子 P_i 为节点并以句子间的相似关系为边，并以句子间的相似度为边的权值可构成一个无向的加权 TextRank 的网络图，其中各节点的权重计算： ( 7 ) 设每个节点的权重值初始化均为 1/|D|, 即 B_0 = (1/|D, 1/|D|, … , 1/|D|)T ,经过若干次迭代计算后可收敛。 收敛后的 B_i 包含了各个句子节点的权重值，根据值的大小进行倒排序可得到相应的句子重要性排名。再选择一定数量 N ([1, |D|])的句子，并结合它们在文本中的先后顺序进行组织就可以构成文本的摘要。如： 根据语料库统计分析摘要句子数量与文本句子数量间的比例以确定合适的N值，或者直接简单地取文本句子总数的一定比例作为摘要句子的数量。 基于改进TextRank算法的自动摘要提取改进TextRank算法 句子与标题之间的相似度 计算各句子与标题句子间的相似度，相似度越高，权重越高。 若标题与句子的特征词完全相同，即其相似度为1，则该句子的最终权重再放大2倍，若完全不同，则保持原权重。 各句子中的特征词是否在标题中也同时出现。 若出现则提升其词频的权重，繁殖，保持词频权重不变。 特殊段落中的句子位置 根据段落及段落中旬子的位置进行加权，对首段中越靠前的句子给予越大的权重提升，末段中越靠后的句子给予越小的权重提升。考虑到收敛后的权重矩阵 B 仍 按句子的先后顺序排序，因此可根据句子的位置设置相应 的权重调整向量 关键句子的处理 如果一个句子自成一段 ，那么这个段落往往起着“ 承上启下 ” 或者“ 过渡句” 的作用 。另外 ，文章中可能有一些小标题 ，也是自成一段的。这些段落一般具有 高概括性 、精炼性的特点，符合摘要本身的要求，故有更大的可能性作为摘 要的一部分 。 特殊句子权重的传递 对首段句子 、末段句子 、关键句子( 统称为特殊句子 ) 进行标记 ，并放大这些 句子传递出去的权重 ，使与之关联的句子获得更大的权值。 句子长度过滤 过长或过短的句子都不应该作为生成摘要的候选句 。 算法实现 根据文档 D构造各个句子的特征词向量 P，并进行句子的长度过滤 。 得到特征词词频矩阵 D_n*h’ 得到标题的向量矩阵 P_0 = [ k_01, … , k_0h’ ]T , 并分别计算各句子与标题的相似度 由式 ( 9 ) 得到 向量 TD_n*1 = [ tws_1, … , tws_n ]T 用以调整最后句子权重 由式( 1 0 ) 调整矩阵 D_n*h 用以调整各句子中的词频的权重 根据式 ( 7 ) 及 矩阵 D_n h 计算各句子间的相似度 ， 并得到相似度矩阵SD_nn 根据 SD_n*n 构建基本的 TextRank 网络图 G 特殊段落的处理和特殊句子权重的传递 ，更新相似度矩阵 SD_n*n 更新图 G，并得到新的 TextRank图 G‘ ， 在 G‘ 上运行 iTextRank 算法获得节点的收敛值矩阵 B_i 由式 ( 11 ) 得到转移矩阵 FP_n*1 依次根据 TD_n1 和 FP_n 1 调整矩阵 B_i 输出句子重要度排序结果 P ， 并 根据句子的先后顺序生成最终的摘要 D]]></content>
