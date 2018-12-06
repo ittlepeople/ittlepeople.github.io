@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="知识图谱的定义与架构定义知识图谱．是结构化的语义知识库用于以符号形式描述物理世界中的概念及其相互关系．其基本组成单位是实体－关系－实体三元组以及实体及其相关属性－值对实体间通过关系相互联结构成网状的知识结构。 通过知识图谱可以实现Ｗeｂ从网页链接向概念链接转变，支持用户按主题而不是字符串检索，从而真正实现语义检索．基于知识图谱的搜索引擎能够以图形方式向用户反馈结构化的知识，用户不必浏览大量网页就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="知识图谱构建技术综述‘">
+<meta property="og:url" content="http://yoursite.com/2018/12/05/知识图谱构建技术综述‘/index.html">
+<meta property="og:site_name" content="行者">
+<meta property="og:description" content="知识图谱的定义与架构定义知识图谱．是结构化的语义知识库用于以符号形式描述物理世界中的概念及其相互关系．其基本组成单位是实体－关系－实体三元组以及实体及其相关属性－值对实体间通过关系相互联结构成网状的知识结构。 通过知识图谱可以实现Ｗeｂ从网页链接向概念链接转变，支持用户按主题而不是字符串检索，从而真正实现语义检索．基于知识图谱的搜索引擎能够以图形方式向用户反馈结构化的知识，用户不必浏览大量网页就">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/12/05/知识图谱构建技术综述‘/架构图.png">
+<meta property="og:updated_time" content="2018-12-06T08:39:23.573Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="知识图谱构建技术综述‘">
+<meta name="twitter:description" content="知识图谱的定义与架构定义知识图谱．是结构化的语义知识库用于以符号形式描述物理世界中的概念及其相互关系．其基本组成单位是实体－关系－实体三元组以及实体及其相关属性－值对实体间通过关系相互联结构成网状的知识结构。 通过知识图谱可以实现Ｗeｂ从网页链接向概念链接转变，支持用户按主题而不是字符串检索，从而真正实现语义检索．基于知识图谱的搜索引擎能够以图形方式向用户反馈结构化的知识，用户不必浏览大量网页就">
+<meta name="twitter:image" content="http://yoursite.com/2018/12/05/知识图谱构建技术综述‘/架构图.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/05/知识图谱构建技术综述‘/">
+
+
+
+
+
+  <title>知识图谱构建技术综述‘ | 行者</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">行者</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">终身学习</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/05/知识图谱构建技术综述‘/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="行者">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="行者">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">知识图谱构建技术综述‘</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-05T16:30:57+08:00">
+                2018-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><-- more="" --=""></--></p>
+<h1 id="知识图谱的定义与架构"><a href="#知识图谱的定义与架构" class="headerlink" title="知识图谱的定义与架构"></a>知识图谱的定义与架构</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>知识图谱．是结构化的语义知识库用于以符号形式描述物理世界中的概念及其相互关系．其基本组成单位是<strong>实体－关系－实体</strong>三元组以及<strong>实体及其相关属性</strong>－值对实体间通过关系相互联结构成网状的知识结构。</p>
+<p>通过知识图谱可以实现Ｗeｂ从网页链接向概念链接转变，支持用户按主题而不是字符串检索，从而真正实现语义检索．基于知识图谱的搜索引擎能够以图形方式向用户反馈结构化的知识，用户不必浏览大量网页就可以准确定位和深度获取知识。</p>
+<p>包括三层含义：</p>
+<ol>
+<li>知识图谱本身是一个<strong>具有属性的实体</strong>通过<strong>关系链接</strong>而成的网状知识库．从图的角度来看知识图谱在本质上是一种概念网络，其中的节点表示物理世界的<strong>实体或概念</strong>，而实体间的各种<strong>语义关系</strong>则构成网络中的边．由此知识图谱是对物理世界的一种<strong>符号表达</strong>。</li>
+<li>知识图谱的研究价值在于它是构建在当前Ｗeｂ基础之上的一层覆盖网络，借助知识图谱能够在Ｗeｂ网页之上建立概念间的链接关系，从而以最小的代价将互联网中积累的信息组织起来，成为可以被利用的知识。</li>
+<li>知识图谱的应用价值在于它能够改变现有的信息检索方式。一方面通过推理实现<strong>概念检索</strong>（相对于现有的字符串模糊匹配方式而言）， 另一方面以<strong>图形化方式</strong>向用户展示经过分类整理的结构化知识，从而使人们从人工过滤网页寻找答案的模式中解脱出来。</li>
+</ol>
+<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>知识图谱的架构包括知识图谱自身的<strong>逻辑结构</strong>以及构建知识图谱所采用的<strong>技术（体系）架构</strong>，后者是本文讨论的重点。</p>
+<h3 id="逻辑架构"><a href="#逻辑架构" class="headerlink" title="逻辑架构"></a>逻辑架构</h3><p>首先介绍知识图谱的逻辑结构从逻辑上将知识图谱划分为２个层次<strong>数据层</strong>和<strong>模式层</strong>。</p>
+<h4 id="数据层"><a href="#数据层" class="headerlink" title="数据层"></a>数据层</h4><p>在知识图谱数据层，知识以事实(fact)为单位存储在图数据库．如果以<strong>“实体－关系－实体“</strong>或者<strong>“实体－属性－性值“</strong>三元组作为事实的基本表达方式，则存储在图数据库中的所有数据将构成庞大的实体关系网络形成知识的图谱。</p>
+<h4 id="模式层"><a href="#模式层" class="headerlink" title="模式层"></a>模式层</h4><p>模式层在数据层之上是知识图谱的<strong>核心</strong>．在模式层存储的是<strong>经过提炼的知识</strong>通常采用<strong>本体库</strong>（有一匹马叫赤兔，那么马这个概念才是本体；有一个美女叫貂蝉，那么美女这个概念才是本体；本体就是知识库<strong>本身</strong>的存在，和里面的数据没有关系）来管理知识图谱的模式层，借助本体库对公理、规则和约束条件的支持能力来规范实体、关系以及实体的类型和属性等对象之间的联系。本体库在知识图谱中的地位相当于<strong>知识库的模具</strong>拥有本体库的知识库（知识数据库，包含了知识的本体和知识。Freebase是一个知识库（结构化），维基百科也可以看成一个知识库（半结构化））冗余知识较少。</p>
+<h3 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h3><p><img src="/2018/12/05/知识图谱构建技术综述‘/架构图.png" alt="架构图"></p>
+<p>知识图谱有<strong>自顶向下</strong>和<strong>自底向上</strong>２种构建方式．所谓自顶向下构建是指借助百科类网站等结构化数据源，从高质量数据中提取本体和模式信息，加入到知识库中；所谓<strong>自底向上</strong>构建则是借助一定的技术手段从公开采集的数据中<strong>提取出资源模式</strong>，选择其中<strong>置信度较高的新模式</strong>经<strong>人工审核</strong>之后加入到知识库中。</p>
+<h1 id="知识图谱的构建技术"><a href="#知识图谱的构建技术" class="headerlink" title="知识图谱的构建技术"></a>知识图谱的构建技术</h1><p>采用<strong>自底向上</strong>的方式构建知识图谱的过程是一个<strong>迭代更新</strong>的过程每一轮更新包括３个步骤：</p>
+<ol>
+<li><strong>信息抽取</strong> ，即从各种类型的数据源中提取出<strong>实体(概念)、 属性</strong>以及实体间的<strong>相互关系</strong> ，在此基础上形成本体化的知识表达</li>
+<li><strong>知识融合</strong> ，在获得新知识之后需要对其进行整合以<strong>消除矛盾和歧义</strong> ，比如某些实体可能有多种表达，某个特定称谓也许对应于多个不同的实体等</li>
+<li><strong>知识加工</strong> ，对于经过融合的新知识，需要经过质量评估之后（部分需要人工参与甄别）才能将合格的部分加入到知识库中以确保知识库的质量．新增数据之后，可以进行<strong>知识推理</strong>拓展现有知识得到新知识。</li>
+</ol>
+<h2 id="信息抽取"><a href="#信息抽取" class="headerlink" title="信息抽取"></a>信息抽取</h2><p>信息抽取是知识图谱构建的第１步，其中的关键问题是如何从异构数据源中<strong>自动抽取信息</strong>得到候选知识单元．信息抽取是一种<strong>自动化地从半结构化和无结构数据</strong>中抽取<strong>实体、关系</strong>以及<strong>实体属性</strong>等结构化信息的技术。涉及的关键技术包括实体抽取、关系抽取和属性抽取。</p>
+<h3 id="实体抽取"><a href="#实体抽取" class="headerlink" title="实体抽取"></a>实体抽取</h3><p>实体抽取，也称为命名实体识别(named entity recognition, NER) ，是指从文本数据集中<strong>自动识别出命名实体</strong>．实体抽取的质量（准确率和召回率）对后续的知识获取效率和质量影响极大，因此是信息抽取中最为基础和关键的部分。</p>
+<h3 id="关系抽取"><a href="#关系抽取" class="headerlink" title="关系抽取"></a>关系抽取</h3><p>文本语料经过实体抽取得到的是一系列<strong>离散的命名实体</strong>，为了得到语义信息还需要从相关语料中提取出实体之间的关联关系，通过关系将实体（概念）联系起来，才能够形成网状的知识结构。研究关系抽取技术的目的就是解决如何从文本语料中<strong>抽取实体间的关系</strong>这一基本问题。</p>
+<h3 id="属性抽取"><a href="#属性抽取" class="headerlink" title="属性抽取"></a>属性抽取</h3><p>属性抽取的目标是从<strong>不同信息源</strong>中采集<strong>特定实体的属性信息</strong>．例如针对某个公众人物，可以从网络公开信息中得到其昵称、生日、国籍、教育背景等信息。属性抽取技术能够从<strong>多种数据来源</strong>中汇集这些信息，实现对实体属性的完整勾画。</p>
+<p>由于可以将实体的属性视为实体与属性值之间的一种名词性关系，因此也可以将属性抽取问题视为关系抽取问题。</p>
+<h2 id="知识融合"><a href="#知识融合" class="headerlink" title="知识融合"></a>知识融合</h2><p>通过信息抽取，实现了从非结构化和半结构化数据中获取实体、关系以及实体属性信息的目标，然而这些结果中可能包含大量的冗余和错误信息，数据之间的关系也是扁平化的<strong>缺乏层次性和逻辑性</strong>，因此有必要对其进行清理和整合。知识融合包括２部分内容：<strong>实体链接</strong>和<strong>知识合并</strong>。通过知识融合，可以<strong>消除概念的歧义，剔除冗余和错误概念，从而确保知识的质量</strong> 。</p>
+<h3 id="实体链接"><a href="#实体链接" class="headerlink" title="实体链接"></a>实体链接</h3><p>实体链接（entity linking）是指对于从文本中抽取得到的实体对象，将其链接到知识库中对应的正确实体对象的操作。</p>
+<p>实体链接的基本思想是首先根据给定的<strong>实体指称项</strong>，从知识库中选出一组候选实体对象然后通过<strong>相似度计算</strong>将指称项链接到正确的实体对象。</p>
+<p>实体链接的一般流程是：</p>
+<ol>
+<li>从文本中通过实体抽取得到实体指称项</li>
+<li>进行<strong>实体消歧</strong>和<strong>共指消解</strong> ，判断知识库中的同名实体与之是否代表不同的含义，以及知识库中是否存在其他命名实体与之表示相同的含义</li>
+<li>在确认知识库中对应的正确实体对象之后，将<strong>该实体指称项链接到知识库中对应实体</strong> 。</li>
+</ol>
+<h4 id="实体消歧"><a href="#实体消歧" class="headerlink" title="实体消歧"></a>实体消歧</h4><p>实体消歧（entity disambiguation）是专门用于<strong>解决同名实体产生歧义问题</strong>的技术．在实际语言环境中经常会遇到某个实体指称项对应于多个命名实体对象的问题。例如李娜这个名词（指称项）可以对应于作为歌手的李娜这个实体，也可以对应于作为网球运动员的李娜这个实体，通过实体消歧就可以根据当前的语境准确建立实体链接．实体消歧主要<strong>采用聚类法</strong> 。</p>
+<p>聚类法是指以<strong>实体对象为聚类中心</strong>将所有指向同一目标实体对象的指称项聚集到以该对象为中心的类别下。聚类法消歧的关键问题是如何<strong>定义实体对象与指称项之间的相似度</strong> ，常用方法有４种。</p>
+<ol>
+<li><strong>空间向量模型词袋模型</strong>。典型的方法是取当前语料中实体指称项周边的词构成特征向量，然后利用向量的余弦相似度进行比较，将该指称项聚类到与之最相近的实体指称项集合中。</li>
+<li><strong>语义模型 </strong>。该模型与空间向量模型类似，区别在于特征向量的构造方法不同，语义模型的特征向量不仅包含词袋向量而且包含一部分语义特征。</li>
+<li><strong>社会网络模型 。</strong>该模型的基本假设是物以类聚、人以群分，在社会化语境中，实体指称项的意义在很大程度上是由与其相关联的实体所决定的．建模时，首先利用实体间的关系将与之相关的指称项链接起来构成网络然，后利用社会网络分析技术计算该网络中节点之间的拓扑距离（网络中的节点即实体的指称项），以此来判定指称项之间的相似度。</li>
+<li><strong>百科知识模型．</strong>百科类网站通常会为每个实体（指称项）分配一个单独页面，其中包括指向其他实体页面的超链接，百科知识模型正是利用这种链接关系来计算实体指称项之间的相似度。</li>
+</ol>
+<h4 id="共指消解"><a href="#共指消解" class="headerlink" title="共指消解"></a>共指消解</h4><p>共指消解（entity resolution） 技术主要用于解决<strong>多个指称项对应于同一实体对象的问题</strong>。例如在一篇新闻稿中“Barack Obama”, “president Obama”, “the president”等指称项可能指向的是同一实体对象，其中的许多代词如”he”，”him” 等也可能指向该实体对象．利用共指消解技术可以将这些指称项关联(合并)到正确的实体对象．由于该问题在信息检索和自然语言处理等领域具有特殊的重要性，吸引了大量的研究努力，因此学术界对该问题有多种不同的表述典型的包括：<strong>对象对齐(object alignment)、 实体匹配(entity matching)、以及实体同义（entity synonyms）</strong>。</p>
+<h3 id="知识合并"><a href="#知识合并" class="headerlink" title="知识合并"></a>知识合并</h3><p>在构建知识图谱时，可以从第三方知识库产品或已有结构化数据获取知识输入。</p>
+<h4 id="合并外部知识库"><a href="#合并外部知识库" class="headerlink" title="合并外部知识库"></a>合并外部知识库</h4><p>将外部知识库融合到本地知识库需要处理２个层面的问题．</p>
+<ol>
+<li><strong>数据层</strong>的融合，包括实体的指称、属性、关系以及所属类别等，主要的问题是如何避免实例以及关系的冲突问题，造成不必要的冗余</li>
+<li>通过<strong>模式层</strong>的融合将新得到的本体融入已有的本体库中。</li>
+</ol>
+<h4 id="合并关系数据库"><a href="#合并关系数据库" class="headerlink" title="合并关系数据库"></a>合并关系数据库</h4><p>在知识图谱构建过程中一个重要的高质量知识来源是企业或者机构自己的关系数据库。</p>
+<h2 id="知识加工"><a href="#知识加工" class="headerlink" title="知识加工"></a>知识加工</h2><p>通过<strong>信息抽取</strong>，可以从原始语料中提取出实体、关系与属性等知识要素．再经过<strong>知识融合</strong>，可以消除实体指称项与实体对象之间的歧义得到一系列基本的事实表达．然而，事实本身并不等于知识，要想最终获得结构化、网络化的知识体系，还需要经历知识加工的过程．知识加工主要包括３方面内容：本体构建、知识推理和质量评估。</p>
+<h3 id="本体构建"><a href="#本体构建" class="headerlink" title="本体构建"></a>本体构建</h3><p>本体（ontology）是对概念进行建模的规范，是描述客观世界的抽象模型，以形式化方式对概念及其之间的联系给出明确定义．本体的最大特点在于它是共享的，本体中反映的知识是一种明确定义的共识．虽然在不同时代和领域学者们对本体曾经给出过不同的定义，但这些定义的内涵是一致的，即：本体是同一领域内的不同主体之间进行交流的语义基础．本体是树状结构，相邻层次的节点（概念）之间具有严格的“IsA” 关系，这种单纯的关系有助于知识推理，但却不利于表达概念的多样性．在知识图谱中，本体位于模式层，用于描述概念层次体系是知识库中知识的概念模板。</p>
+<h3 id="知识推理"><a href="#知识推理" class="headerlink" title="知识推理"></a>知识推理</h3><p>知识推理是指从知识库中已有的实体关系数据出发，经过计算机推理建立实体间的新关联，从而拓展和丰富知识网络．知识推理是知识图谱构建的重要手段和关键环节，通过知识推理，能够从现有知识中发现新的知识．例如已知（乾隆，父亲，雍正）和（雍正，父亲，康熙）可以得到（乾隆，祖父，康熙）或（康熙，孙子，乾隆）．<strong>知识推理的对象并不局限于实体间的关系</strong>也可以是<strong>实体的属性值、本体的概念层次关系</strong>等．例如已知某实体的生日属性，可以通过推理得到该实体的年龄属性．根据本体库中的概念继承关系，也可以进行<strong>概念推理</strong>，例如已知（老虎，科，猫科）和（猫科，目，食肉目）可以推出（老虎，目，食肉目）。</p>
+<p>知识的推理方法可以分为２大类：基于<strong>逻辑的推理</strong>和基于<strong>图的推理</strong></p>
+<h3 id="质量评估"><a href="#质量评估" class="headerlink" title="质量评估"></a>质量评估</h3><p>质量评估也是知识库构建技术的重要组成部分．</p>
+<ol>
+<li>受现有技术水平的限制，采用开放域信息抽取技术得到的知识元素有可能存在错误（如实体识别错误、关系抽取错误等）经过知识推理得到的知识的质量同样也是没有保障的，因此在将其加入知识库之前需要有一个质量评估的过程</li>
+<li>随着开放关联数据项目的推进，各子项目所产生的知识库产品间的质量差异也在增大，数据间的冲突日益增多，如何对其质量进行评估，对于全局知识图谱的构建起着重要的作用．</li>
+</ol>
+<p>引入质量评估的意义在于：可以对知识的<strong>可信度进行量化</strong> ，通过舍弃置信度较低的知识，可以保障知识库的质量。</p>
+<h2 id="知识更新"><a href="#知识更新" class="headerlink" title="知识更新"></a>知识更新</h2><p>人类所拥有的信息和知识量都是时间的单调递增函数，因此知识图谱的内容也需要与时俱进，其构建过程是一个不断迭代更新的过程。</p>
+<p>从逻辑上看知识库的更新包括<strong>概念层的更新</strong>和<strong>数据层的更新</strong>．概念层的更新是指新增数据后获得了新的概念，需要自动将新的概念添加到知识库的概念层中．数据层的更新主要是新增或更新实体、关系和属性值，对数据层进行更新需要考虑数据源的可靠性，数据的一致性（是否存在矛盾或冗余等问题）等多方面因素．当前流行的方法是选择百科类网站等可靠数据源，并选择在各数据源中出现频率高的事实和属性加入知识库．知识的更新也可以采用众包的模式（如 Freebase），而对于概念层的更新，则需要借助专业团队进行人工审核。</p>
+<p>知识图谱的内容更新有２种方式数据驱动下的<strong>全面更新</strong>和<strong>增量更新</strong>．所谓全面更新是指以更新后的全部数据为输入，从零开始构建知识图谱．这种方式比较简单，但资源消耗大，而且需要耗费大量人力资源进行系统维护；而增量更新，则是以当前新增数据为输入，向现有知识图谱中添加新增知识．这种方式资源消耗小，但目前仍需要大量人工干预（定义规则等，因此实施起来十分困难。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/26/聊天机器人/" rel="next" title="聊天机器人">
+                <i class="fa fa-chevron-left"></i> 聊天机器人
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">行者</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#知识图谱的定义与架构"><span class="nav-number">1.</span> <span class="nav-text">知识图谱的定义与架构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构"><span class="nav-number">1.2.</span> <span class="nav-text">架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑架构"><span class="nav-number">1.2.1.</span> <span class="nav-text">逻辑架构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据层"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">数据层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模式层"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">模式层</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#技术架构"><span class="nav-number">1.2.2.</span> <span class="nav-text">技术架构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#知识图谱的构建技术"><span class="nav-number">2.</span> <span class="nav-text">知识图谱的构建技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#信息抽取"><span class="nav-number">2.1.</span> <span class="nav-text">信息抽取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实体抽取"><span class="nav-number">2.1.1.</span> <span class="nav-text">实体抽取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关系抽取"><span class="nav-number">2.1.2.</span> <span class="nav-text">关系抽取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性抽取"><span class="nav-number">2.1.3.</span> <span class="nav-text">属性抽取</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识融合"><span class="nav-number">2.2.</span> <span class="nav-text">知识融合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实体链接"><span class="nav-number">2.2.1.</span> <span class="nav-text">实体链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#实体消歧"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">实体消歧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#共指消解"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">共指消解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#知识合并"><span class="nav-number">2.2.2.</span> <span class="nav-text">知识合并</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#合并外部知识库"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">合并外部知识库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合并关系数据库"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">合并关系数据库</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识加工"><span class="nav-number">2.3.</span> <span class="nav-text">知识加工</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本体构建"><span class="nav-number">2.3.1.</span> <span class="nav-text">本体构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#知识推理"><span class="nav-number">2.3.2.</span> <span class="nav-text">知识推理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#质量评估"><span class="nav-number">2.3.3.</span> <span class="nav-text">质量评估</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识更新"><span class="nav-number">2.4.</span> <span class="nav-text">知识更新</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">行者</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
