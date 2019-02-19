@@ -88,7 +88,7 @@
 <meta property="og:description" content="摘要：知识图谱构建的基本介绍">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/12/05/知识图谱构建技术综述/架构图.png">
-<meta property="og:updated_time" content="2018-12-06T09:37:39.530Z">
+<meta property="og:updated_time" content="2018-12-07T06:36:42.847Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="知识图谱构建技术综述">
 <meta name="twitter:description" content="摘要：知识图谱构建的基本介绍">
@@ -378,14 +378,15 @@
       
         <p>摘要：知识图谱构建的基本介绍</p>
 <a id="more"></a>
-<h1 id="1-知识图谱的定义与架构"><a href="#1-知识图谱的定义与架构" class="headerlink" title="1 知识图谱的定义与架构"></a>1 知识图谱的定义与架构</h1><h2 id="1-1-定义"><a href="#1-1-定义" class="headerlink" title="1.1 定义"></a>1.1 定义</h2><p>知识图谱．是结构化的语义知识库用于以符号形式描述物理世界中的概念及其相互关系．其基本组成单位是<strong>实体－关系－实体</strong>三元组以及<strong>实体及其相关属性</strong>－值对实体间通过关系相互联结构成网状的知识结构。</p>
-<p>通过知识图谱可以实现Ｗeｂ从网页链接向概念链接转变，支持用户按主题而不是字符串检索，从而真正实现语义检索．基于知识图谱的搜索引擎能够以图形方式向用户反馈结构化的知识，用户不必浏览大量网页就可以准确定位和深度获取知识。</p>
+<h1 id="1-知识图谱的定义与架构"><a href="#1-知识图谱的定义与架构" class="headerlink" title="1 知识图谱的定义与架构"></a>1 知识图谱的定义与架构</h1><h2 id="1-1-定义"><a href="#1-1-定义" class="headerlink" title="1.1 定义"></a>1.1 定义</h2><p>知识图谱．是结构化的语义知识库用于以符号形式描述物理世界中的概念、实体、事件及其相互关系,本质上，知识图谱是一种揭示实体之间关系的语义网络，可以对现实世界的事物及其相互关系进行形式化地描述。现在的知识图谱已被用来泛指各种大规模的知识库。其基本组成单位是<strong>实体－关系－实体</strong>三元组以及<strong>实体及其相关属性</strong>－值对实体间通过关系相互联结构成网状的知识结构。其中<strong>概念</strong>是指人们在认识世界过程中形成的对客观事物的概念化表示，如人、动物、组织机构等；<strong>实体</strong>是客观世界中的具体事物，如篮球运动员姚明、互联网公司腾讯等；<strong>事件</strong>是客观世界的活动，如地震、买卖行为等；<strong>关系</strong>描述概念、实体、事件之间客观存在的关联，如毕业院校描述了个人与其所在院校的关系，运动员和篮球运动员之间概念和子概念的关系等。</p>
+<p>通过知识图谱可以实现Ｗeb从网页链接向概念链接转变，支持用户按主题而不是字符串检索，从而真正实现语义检索．基于知识图谱的搜索引擎能够以图形方式向用户反馈结构化的知识，用户不必浏览大量网页就可以准确定位和深度获取知识。</p>
 <p>包括三层含义：</p>
 <ol>
 <li>知识图谱本身是一个<strong>具有属性的实体</strong>通过<strong>关系链接</strong>而成的网状知识库．从图的角度来看知识图谱在本质上是一种概念网络，其中的节点表示物理世界的<strong>实体或概念</strong>，而实体间的各种<strong>语义关系</strong>则构成网络中的边．由此知识图谱是对物理世界的一种<strong>符号表达</strong>。</li>
 <li>知识图谱的研究价值在于它是构建在当前Ｗeｂ基础之上的一层覆盖网络，借助知识图谱能够在Ｗeｂ网页之上建立概念间的链接关系，从而以最小的代价将互联网中积累的信息组织起来，成为可以被利用的知识。</li>
 <li>知识图谱的应用价值在于它能够改变现有的信息检索方式。一方面通过推理实现<strong>概念检索</strong>（相对于现有的字符串模糊匹配方式而言）， 另一方面以<strong>图形化方式</strong>向用户展示经过分类整理的结构化知识，从而使人们从人工过滤网页寻找答案的模式中解脱出来。</li>
 </ol>
+<p>三元组是知识图谱的一种通用表示方式，即 G = (E,R,S)，其中  E={e1,e2, … ,e|E|} 是知识库中的实体集合，共包含|E|种不同实体；R ={r1,r2  … ,r|E|}是知识库中的关系集合，共包|R|种不同关系; S代表知识库中的三元组集合。三元组的基本形式主要包括实体1、关系、实体2和概念、属性、属性值等，实体是知识图谱中的最基本元素，不同的实体间存在不同的关系。概念主要指集合、类别、对象类型、事物的种类，例如人物、地理等；属性主要指对象可能具有的属性、特征、特性、特点以及参数，例如国籍、生日等；属性值主要指对象指定属性的值，例如中国等。每个实体(概念的外延)可用一个全局唯一确定的ID来标识，每个属性-属性值对(attribute-value pair，AV P )可用来刻画实体的内在特性，而关系可用来连接两<br>个实体，刻画它们之间的关联。</p>
 <h2 id="1-2-架构"><a href="#1-2-架构" class="headerlink" title="1.2 架构"></a>1.2 架构</h2><p>知识图谱的架构包括知识图谱自身的<strong>逻辑结构</strong>以及构建知识图谱所采用的<strong>技术（体系）架构</strong>，后者是本文讨论的重点。</p>
 <h3 id="1-2-1-逻辑架构"><a href="#1-2-1-逻辑架构" class="headerlink" title="1.2.1 逻辑架构"></a>1.2.1 逻辑架构</h3><p>首先介绍知识图谱的逻辑结构从逻辑上将知识图谱划分为２个层次<strong>数据层</strong>和<strong>模式层</strong>。</p>
 <h4 id="1-2-1-1-数据层"><a href="#1-2-1-1-数据层" class="headerlink" title="1.2.1.1 数据层"></a>1.2.1.1 数据层</h4><p>在知识图谱数据层，知识以事实(fact)为单位存储在图数据库．如果以<strong>“实体－关系－实体“</strong>或者<strong>“实体－属性－性值“</strong>三元组作为事实的基本表达方式，则存储在图数据库中的所有数据将构成庞大的实体关系网络形成知识的图谱。</p>
@@ -441,6 +442,7 @@
 <h2 id="2-4-知识更新"><a href="#2-4-知识更新" class="headerlink" title="2.4 知识更新"></a>2.4 知识更新</h2><p>人类所拥有的信息和知识量都是时间的单调递增函数，因此知识图谱的内容也需要与时俱进，其构建过程是一个不断迭代更新的过程。</p>
 <p>从逻辑上看知识库的更新包括<strong>概念层的更新</strong>和<strong>数据层的更新</strong>．概念层的更新是指新增数据后获得了新的概念，需要自动将新的概念添加到知识库的概念层中．数据层的更新主要是新增或更新实体、关系和属性值，对数据层进行更新需要考虑数据源的可靠性，数据的一致性（是否存在矛盾或冗余等问题）等多方面因素．当前流行的方法是选择百科类网站等可靠数据源，并选择在各数据源中出现频率高的事实和属性加入知识库．知识的更新也可以采用众包的模式（如 Freebase），而对于概念层的更新，则需要借助专业团队进行人工审核。</p>
 <p>知识图谱的内容更新有２种方式数据驱动下的<strong>全面更新</strong>和<strong>增量更新</strong>．所谓全面更新是指以更新后的全部数据为输入，从零开始构建知识图谱．这种方式比较简单，但资源消耗大，而且需要耗费大量人力资源进行系统维护；而增量更新，则是以当前新增数据为输入，向现有知识图谱中添加新增知识．这种方式资源消耗小，但目前仍需要大量人工干预（定义规则等，因此实施起来十分困难。</p>
+<h1 id="3-参考资料"><a href="#3-参考资料" class="headerlink" title="3 参考资料"></a>3 参考资料</h1><p>知识图谱构建技术综述   刘峤　李杨　段宏　刘瑶　秦志光</p>
 
       
     </div>
@@ -482,6 +484,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/07/序列模型学习笔记/" rel="prev" title="序列模型学习笔记">
+                序列模型学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -558,7 +564,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -569,7 +575,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -580,7 +586,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -613,7 +619,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-知识图谱的定义与架构"><span class="nav-text">1 知识图谱的定义与架构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-定义"><span class="nav-text">1.1 定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-架构"><span class="nav-text">1.2 架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-逻辑架构"><span class="nav-text">1.2.1 逻辑架构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1-1-数据层"><span class="nav-text">1.2.1.1 数据层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1-2-模式层"><span class="nav-text">1.2.1.2 模式层</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-技术架构"><span class="nav-text">1.2.2 技术架构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-知识图谱的构建技术"><span class="nav-text">2 知识图谱的构建技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-信息抽取"><span class="nav-text">2.1 信息抽取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-实体抽取"><span class="nav-text">2.1.1 实体抽取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-关系抽取"><span class="nav-text">2.1.2 关系抽取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-3-属性抽取"><span class="nav-text">2.1.3 属性抽取</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-知识融合"><span class="nav-text">2.2 知识融合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-实体链接"><span class="nav-text">2.2.1 实体链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-1-实体消歧"><span class="nav-text">2.2.1.1 实体消歧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-2-共指消解"><span class="nav-text">2.2.1.2 共指消解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-知识合并"><span class="nav-text">2.2.2 知识合并</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-1-合并外部知识库"><span class="nav-text">2.2.2.1 合并外部知识库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-2-合并关系数据库"><span class="nav-text">2.2.2.2 合并关系数据库</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-知识加工"><span class="nav-text">2.3 知识加工</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-本体构建"><span class="nav-text">2.3.1 本体构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-知识推理"><span class="nav-text">2.3.2 知识推理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-3-质量评估"><span class="nav-text">2.3.3 质量评估</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-知识更新"><span class="nav-text">2.4 知识更新</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-知识图谱的定义与架构"><span class="nav-text">1 知识图谱的定义与架构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-定义"><span class="nav-text">1.1 定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-架构"><span class="nav-text">1.2 架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-逻辑架构"><span class="nav-text">1.2.1 逻辑架构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1-1-数据层"><span class="nav-text">1.2.1.1 数据层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1-2-模式层"><span class="nav-text">1.2.1.2 模式层</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-技术架构"><span class="nav-text">1.2.2 技术架构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-知识图谱的构建技术"><span class="nav-text">2 知识图谱的构建技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-信息抽取"><span class="nav-text">2.1 信息抽取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-实体抽取"><span class="nav-text">2.1.1 实体抽取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-关系抽取"><span class="nav-text">2.1.2 关系抽取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-3-属性抽取"><span class="nav-text">2.1.3 属性抽取</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-知识融合"><span class="nav-text">2.2 知识融合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-实体链接"><span class="nav-text">2.2.1 实体链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-1-实体消歧"><span class="nav-text">2.2.1.1 实体消歧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-2-共指消解"><span class="nav-text">2.2.1.2 共指消解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-知识合并"><span class="nav-text">2.2.2 知识合并</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-1-合并外部知识库"><span class="nav-text">2.2.2.1 合并外部知识库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-2-合并关系数据库"><span class="nav-text">2.2.2.2 合并关系数据库</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-知识加工"><span class="nav-text">2.3 知识加工</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-本体构建"><span class="nav-text">2.3.1 本体构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-知识推理"><span class="nav-text">2.3.2 知识推理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-3-质量评估"><span class="nav-text">2.3.3 质量评估</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-知识更新"><span class="nav-text">2.4 知识更新</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-参考资料"><span class="nav-text">3 参考资料</span></a></li></ol></div>
             
 
           </div>
@@ -633,7 +639,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

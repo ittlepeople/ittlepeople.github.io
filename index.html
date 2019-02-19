@@ -281,6 +281,735 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/14/Linux基本命令/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="行者">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="行者">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/14/Linux基本命令/" itemprop="url">Linux基本命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-14T21:40:51+08:00">
+                2019-01-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一、基本命令"><a href="#一、基本命令" class="headerlink" title="一、基本命令"></a>一、基本命令</h1><h2 id="1-1-相对路径："><a href="#1-1-相对路径：" class="headerlink" title="1.1 相对路径："></a>1.1 相对路径：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">~     # home文件夹</span><br><span class="line">cd .. # 返回上级目录</span><br><span class="line">cd ../../ # 往上返回两次</span><br><span class="line">cd -  # 返回上级目录</span><br><span class="line">cd ~  # 返回home文件夹</span><br></pre></td></tr></table></figure>
+<h2 id="1-2-绝对路径："><a href="#1-2-绝对路径：" class="headerlink" title="1.2 绝对路径："></a>1.2 绝对路径：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /home/ubuntu/Documents</span><br></pre></td></tr></table></figure>
+<h2 id="1-3-浏览文件夹下内容："><a href="#1-3-浏览文件夹下内容：" class="headerlink" title="1.3 浏览文件夹下内容："></a>1.3 浏览文件夹下内容：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看文件夹下的文件及文件夹(ls: list)</span></span><br><span class="line">ls</span><br><span class="line"><span class="comment"># 显示文件夹下的文件及文件夹详细信息(-l: long)</span></span><br><span class="line">ls -l</span><br><span class="line"><span class="comment"># 显示文件夹下的文件及文件夹详细信息，显示文件大小单位(-lh: long human)</span></span><br><span class="line">ls -lh</span><br><span class="line"><span class="comment"># 显示全部（包含隐藏）文件夹下的文件及文件夹详细信息(-a: all)</span></span><br><span class="line">ls -a</span><br><span class="line"><span class="comment"># 显示ls其他功能</span></span><br><span class="line">ls --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-4-创建文件："><a href="#1-4-创建文件：" class="headerlink" title="1.4 创建文件："></a>1.4 创建文件：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入文件夹，在该文件夹内创建</span></span><br><span class="line">touch file1</span><br><span class="line"><span class="comment"># 创建多个文件</span></span><br><span class="line">touch file2 file3 file4</span><br><span class="line"><span class="comment"># 创建文件夹</span></span><br><span class="line">mkdir folder</span><br></pre></td></tr></table></figure>
+<h2 id="1-5-复制文件："><a href="#1-5-复制文件：" class="headerlink" title="1.5 复制文件："></a>1.5 复制文件：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 复制file1到filecopy，但是不可检测filecopy是否已经存在</span></span><br><span class="line">cp file1 file1copy</span><br><span class="line"><span class="comment"># 复制file1到filecopy，检测filecopy是否已经存在（-i: interactive）</span></span><br><span class="line">cp -i file1 filecopy</span><br><span class="line"><span class="comment"># 复制文件到另一个文件夹中</span></span><br><span class="line">cp file1 folder/</span><br><span class="line">cp file1 file2 folder/</span><br><span class="line"><span class="comment"># 复制一个文件中的所有文件到另一个文件夹中(-R 递归)</span></span><br><span class="line">cp -R folder1/ folder2/</span><br><span class="line"><span class="comment"># 复制所有以file开头的文件到另一个文件夹中</span></span><br><span class="line">cp file* folder2/</span><br></pre></td></tr></table></figure>
+<h2 id="1-6-移动文件："><a href="#1-6-移动文件：" class="headerlink" title="1.6 移动文件："></a>1.6 移动文件：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 移动文件到文件夹</span></span><br><span class="line">mv file1 folder1/</span><br><span class="line"><span class="comment"># 重命名</span></span><br><span class="line">mv file2 file2rename</span><br></pre></td></tr></table></figure>
+<h2 id="1-7-删除文件："><a href="#1-7-删除文件：" class="headerlink" title="1.7 删除文件："></a>1.7 删除文件：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 只能删除空文件夹</span></span><br><span class="line">rmdir folder3</span><br><span class="line"><span class="comment"># 删除文件夹及里面内容(-r 递归)</span></span><br><span class="line">rm -r folder3</span><br><span class="line"><span class="comment"># 删除文件(每一个都询问确认)</span></span><br><span class="line">rm -i file1 file2 file3</span><br><span class="line"><span class="comment"># 删除文件(超过3个才会询问确认)</span></span><br><span class="line">rm -I file1 file2</span><br></pre></td></tr></table></figure>
+<h2 id="1-8-修改文件："><a href="#1-8-修改文件：" class="headerlink" title="1.8 修改文件："></a>1.8 修改文件：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建（修改）文件</span></span><br><span class="line">nano t.py</span><br><span class="line"><span class="comment"># crtl + x 保存退出![文件权限](F:\blog\hexo\source\_posts\Linux基本命令\文件权限.png)![文件权限](F:\blog\hexo\source\_posts\Linux基本命令\文件权限.png)</span></span><br><span class="line"><span class="comment"># 运行Python脚本</span></span><br><span class="line">python3 t.py</span><br><span class="line"><span class="comment"># 显示在屏幕上</span></span><br><span class="line">cat t.py</span><br><span class="line"><span class="comment"># 复制到另一个文件</span></span><br><span class="line">cat t.py &gt; t1.py</span><br><span class="line"><span class="comment"># 把多个文件合并到新的文件中</span></span><br><span class="line">cat t.py t1.py &gt; t2.py</span><br><span class="line"><span class="comment"># 把文件追加到已有文件之后</span></span><br><span class="line">cat t3.py &gt;&gt; t2.py</span><br></pre></td></tr></table></figure>
+<h2 id="1-9-显示当前路径"><a href="#1-9-显示当前路径" class="headerlink" title="1.9 显示当前路径"></a>1.9 显示当前路径</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure>
+<h1 id="二、文件权限"><a href="#二、文件权限" class="headerlink" title="二、文件权限"></a>二、文件权限</h1><p><img src="/2019/01/14/Linux基本命令/Linux基本命令\文件权限.png" alt="文件权限"></p>
+<ul>
+<li><code>Type</code>: 很多种 (最常见的是 <code>-</code> 为文件, <code>d</code> 为文件夹, 其他的还有<code>l</code>, <code>n</code> … 这种东西, 真正自己遇到了, 网上再搜就好, 一次性说太多记不住的).</li>
+<li><code>User</code>: 后面跟着的三个空是使用 User 的身份能对这个做什么处理 (<code>r</code> 能读; <code>w</code> 能写; <code>x</code>能执行; <code>-</code> 不能完成某个操作).</li>
+<li><code>Group</code>: 一个 Group 里可能有一个或多个 user, 这些权限的样式和 User 一样.</li>
+<li><code>Others</code>: 除了 User 和 Group 以外人的权限.</li>
+</ul>
+<p>修改权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 形式如下：</span></span><br><span class="line">chmod [谁][怎么修改] [哪个文件]</span><br><span class="line"><span class="comment"># 修改t1.py的user加上r(可读)</span></span><br><span class="line">chmod u+r t1.py</span><br><span class="line">ls -l t1.py <span class="comment"># 显示 t1.py 的权限</span></span><br><span class="line"><span class="comment"># t1.py的u,g,o 都加上w(可写)</span></span><br><span class="line">chmod a+w t1.py</span><br><span class="line">ls -l t1.py <span class="comment"># 显示 t1.py 的权限</span></span><br><span class="line"><span class="comment"># t1.py的u,g 都加上r,w(可读、写)</span></span><br><span class="line">chmod ug+rw t1.py</span><br><span class="line">ls -l t1.py <span class="comment"># 显示 t1.py 的权限</span></span><br></pre></td></tr></table></figure>
+<p>[谁]</p>
+<ul>
+<li><code>u</code>: 对于 User 修改</li>
+<li><code>g</code>: 对于 Group 修改</li>
+<li><code>o</code>: 对于 Others 修改</li>
+<li><code>a</code>: (all) 对于所有人修改</li>
+</ul>
+<p>[怎么修改]</p>
+<ul>
+<li><code>+</code>, <code>-</code>, <code>=</code>: 作用的形式, 加上, 减掉, 等于某些权限</li>
+<li><code>r</code>, <code>w</code>, <code>x</code> 或者多个权限一起, 比如 <code>rx</code></li>
+</ul>
+<p>[哪个文件]</p>
+<ul>
+<li>施加操作的文件, 可以为多个</li>
+</ul>
+<p>把 .py 文件可执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u+w t1.py</span><br></pre></td></tr></table></figure>
+<p>t1.py 文件内加上一句话：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定用什么打开</span></span><br><span class="line"><span class="comment">#！/home/xing/anaconda3/bin/python3</span></span><br></pre></td></tr></table></figure>
+<h1 id="三、VMware安装Ubuntu"><a href="#三、VMware安装Ubuntu" class="headerlink" title="三、VMware安装Ubuntu"></a>三、VMware安装Ubuntu</h1><p>3.1 安装拼音输入法</p>
+<p>3.2 安装VMware Tools，实现窗口的适应大小，Windows和虚拟机实现复制粘贴。</p>
+<p>3.3 Ubuntu系统安装之后，一般没有pip2和pip3，需要手动安装；之后会同时出现pip（不知道什么意思）, pip2, pip3。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装pip2</span></span><br><span class="line">sudo apt-get install python-pip</span><br><span class="line"><span class="comment"># 安装pip3</span></span><br><span class="line">sudo apt-get install python-pip</span><br></pre></td></tr></table></figure>
+<h1 id="四、Anaconda环境管理"><a href="#四、Anaconda环境管理" class="headerlink" title="四、Anaconda环境管理"></a>四、Anaconda环境管理</h1><p>参考教程：<a href="https://blog.csdn.net/yimingsilence/article/details/79388205" target="_blank" rel="noopener">https://blog.csdn.net/yimingsilence/article/details/79388205</a></p>
+<h2 id="1-管理conda"><a href="#1-管理conda" class="headerlink" title="1. 管理conda"></a>1. 管理conda</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看版本：</span></span><br><span class="line">conda --version</span><br><span class="line"><span class="comment"># 升级版本：</span></span><br><span class="line">conda update conda</span><br></pre></td></tr></table></figure>
+<h2 id="2-创建并激活一个环境"><a href="#2-创建并激活一个环境" class="headerlink" title="2. 创建并激活一个环境"></a>2. 创建并激活一个环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建环境：</span></span><br><span class="line"><span class="comment"># 环境名字为：xsc 同时安装python3.6 numpy pandas 包</span></span><br><span class="line">conda create --name xsc python=3.6 numpy pandas  </span><br><span class="line"><span class="comment"># 激活环境</span></span><br><span class="line">Linux，OS X: <span class="built_in">source</span> activate snowflakes</span><br><span class="line">Windows：activate snowflake`</span><br><span class="line"><span class="comment"># 如果我们没有指定安装python的版本，conda会安装我们最初安装conda时所装的那个版本的python。</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-列出所有的环境"><a href="#3-列出所有的环境" class="headerlink" title="3. 列出所有的环境"></a>3. 列出所有的环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出所有的环境</span></span><br><span class="line">conda info --envs</span><br><span class="line">或者：</span><br><span class="line">conda env list</span><br><span class="line"><span class="comment"># 确认当前环境</span></span><br><span class="line">conda info -envis</span><br><span class="line"><span class="comment"># 复制一个环境</span></span><br><span class="line">conda create -n flowers --<span class="built_in">clone</span> xsc</span><br><span class="line"><span class="comment"># 删除一个环境</span></span><br><span class="line">conda remove -n flowers --all</span><br><span class="line">或</span><br><span class="line">conda env remove -n py3</span><br><span class="line"><span class="comment"># 注销环境</span></span><br><span class="line">·Linux，OS X：<span class="built_in">source</span> deactivate</span><br><span class="line">·Windows：deactivate</span><br></pre></td></tr></table></figure>
+<h2 id="4-管理Python"><a href="#4-管理Python" class="headerlink" title="4. 管理Python"></a>4. 管理Python</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查哪个版本的python可以被安装</span></span><br><span class="line">conda search --full --name python</span><br></pre></td></tr></table></figure>
+<h2 id="5-管理包"><a href="#5-管理包" class="headerlink" title="5. 管理包"></a>5. 管理包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看该环境中包和其版本的列表</span></span><br><span class="line">conda list</span><br><span class="line"><span class="comment"># 查找一个包</span></span><br><span class="line">conda search beautifulsoup4</span><br><span class="line"><span class="comment"># 必须告诉conda你要安装环境的名字（-n xsc）否则它将会被安装到当前环境中</span></span><br><span class="line">conda install --name xsc beautifulsoup4</span><br></pre></td></tr></table></figure>
+<h2 id="6-Anaconda-org安装一个包"><a href="#6-Anaconda-org安装一个包" class="headerlink" title="6. Anaconda.org安装一个包"></a>6. Anaconda.org安装一个包</h2><h2 id="7-pip命令来安装包"><a href="#7-pip命令来安装包" class="headerlink" title="7. pip命令来安装包"></a>7. pip命令来安装包</h2><h2 id="8-移除包、环境、或者conda"><a href="#8-移除包、环境、或者conda" class="headerlink" title="8. 移除包、环境、或者conda"></a>8. 移除包、环境、或者conda</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 xsc 环境中移除 iopro</span></span><br><span class="line">conda remove -n xsc iopro</span><br><span class="line"><span class="comment"># 移除环境</span></span><br><span class="line"><span class="comment"># 不再需要 xsc 环境了，所以输入以下命令：</span></span><br><span class="line">conda remove -n xsc --all</span><br><span class="line"><span class="comment"># 删除conda</span></span><br><span class="line"><span class="comment"># Linux，OS X：移除Anaconda 或 Miniconda 安装文件夹</span></span><br><span class="line">rm -rf ~/miniconda OR  rm -rf ~/anaconda</span><br><span class="line"><span class="comment"># Windows：</span></span><br><span class="line">去控制面板，点击“添加或删除程序”，选择“Python2.7（Anaconda）”或“Python2.7（Miniconda）”并点击删除程序。</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/11/Python易错总结/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="行者">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="行者">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/11/Python易错总结/" itemprop="url">Python易错总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-11T21:12:20+08:00">
+                2019-01-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-range-arange-函数区别"><a href="#1-range-arange-函数区别" class="headerlink" title="1. range(),arange()函数区别"></a>1. range(),arange()函数区别</h1><p><strong>Python 中的range,以及numpy包中的arange函数</strong></p>
+<h2 id="1-1-range-函数："><a href="#1-1-range-函数：" class="headerlink" title="1.1 range()函数："></a>1.1 range()函数：</h2><ul>
+<li><p>函数说明： range(start, stop[, step]) -&gt; range object，根据start与stop指定的范围以及step设定的步长，生成一个序列，步长不能为float,，默认为1。</p>
+</li>
+<li><p>参数含义：start:计数从start开始。默认是从0开始。例如range（5）等价于range（0， 5）;</p>
+<pre><code>end:技术到end结束，但不包括end.例如：range（0， 5） 是[0, 1, 2, 3, 4]没有5
+
+       scan：每次跳跃的间距，默认为1。例如：range（0， 5） 等价于 range(0, 5, 1)
+</code></pre></li>
+</ul>
+<ul>
+<li><strong>range返回一个list</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>range(<span class="number">0</span>,<span class="number">5</span>) 			 	<span class="comment">#生成一个range object,而不是[0,1,2,3,4] </span></span><br><span class="line">range(<span class="number">0</span>, <span class="number">5</span>)   </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">5</span>)] 	 <span class="comment">#从0 开始到4，不包括5，默认的间隔为1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">5</span>,<span class="number">2</span>)] 	 <span class="comment">#间隔设为2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c</span><br><span class="line">[<span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="1-2-arrange-函数"><a href="#1-2-arrange-函数" class="headerlink" title="1.2 arrange()函数"></a>1.2 arrange()函数</h2><ul>
+<li>函数说明：arange([start,] stop[, step,], dtype=None)根据start与stop指定的范围以及step设定的步长，步长可以是float，<strong>生成一个 ndarray</strong>。 </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.arange(<span class="number">3</span>)</span><br><span class="line">array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.arange(<span class="number">3.0</span>)</span><br><span class="line">array([ <span class="number">0.</span>,  <span class="number">1.</span>,  <span class="number">2.</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.arange(<span class="number">3</span>,<span class="number">7</span>)</span><br><span class="line">array([<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.arange(<span class="number">3</span>,<span class="number">7</span>,<span class="number">2</span>)</span><br><span class="line">array([<span class="number">3</span>, <span class="number">5</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arange(<span class="number">0</span>,<span class="number">1</span>,<span class="number">0.1</span>)</span><br><span class="line">array([ <span class="number">0.</span> ,  <span class="number">0.1</span>,  <span class="number">0.2</span>,  <span class="number">0.3</span>,  <span class="number">0.4</span>,  <span class="number">0.5</span>,  <span class="number">0.6</span>,  <span class="number">0.7</span>,  <span class="number">0.8</span>,  <span class="number">0.9</span>])</span><br></pre></td></tr></table></figure>
+<p>#2. list、array、matrix的区别</p>
+<h2 id="2-1-numpy"><a href="#2-1-numpy" class="headerlink" title="2.1 numpy"></a>2.1 numpy</h2><p>NumPy的主要对象是同种元素的<strong>多维数组</strong>。这是一个所有的元素都是一种类型、通过一个正整数元组索引的元素表格(通常是元素是数字)。在NumPy中<strong>维度(dimensions)叫做轴(axes)</strong>，轴的个数叫做秩(rank，但是和线性代数中的秩不是一样的，在用python求线代中的秩中，我们用numpy包中的linalg.matrix_rank方法计算矩阵的秩。</p>
+<p><strong>列表属于python的三种基本集合类型之一,</strong> 其他两种是元组(tuple)和字典(dict). tuple和list区别主要在于是不是mutable（可变）的.</p>
+<p>list和java里的数组不同之处在于, python的list可以<strong>包含任意类型的对象</strong>, 一个list里可以包含int, string或者其他任何对象, 另外list是<strong>可变长度</strong>的(list有append, extend和pop等方法).</p>
+<p>所以, python内建的所谓”列表”其实是功能很强大的数组, 类比一下可以说它对应于java里面的ArrayList .</p>
+<h2 id="2-2-ndarray多维数组"><a href="#2-2-ndarray多维数组" class="headerlink" title="2.2 ndarray多维数组"></a>2.2 ndarray多维数组</h2><ul>
+<li><strong>ndarray是numpy的基石</strong>, 其实它更像一个java里面的标准数组: 所有元素有一个<strong>相同数据类型(dtype)</strong>, 不过大小不是固定的.</li>
+<li>ndarray对于大计算量的性能非常好, 所以list要做运算的时候一定要先转为np.array(<em>a_list</em>)).数组转化为列表：a.tolist()</li>
+<li>ndarray带有一些非常实用的函数, 列举几个常用的: sum, cumsum, argmax, reshape, T, …</li>
+<li>ndarray有fancy indexing, 非常实用, 比如: a[a&gt;3] 返回数组里大于3的元素</li>
+<li>ndarray之间的乘法: 如果用<strong>乘法运算符*的话, 返回的是每个位置元素相乘</strong>(类似matlab里面的.*), <strong>想要矩阵相乘需要用dot().</strong></li>
+<li>常见矩阵的生成: ones, zeros, eye, diag, …</li>
+</ul>
+<h2 id="2-3-matrix矩阵"><a href="#2-3-matrix矩阵" class="headerlink" title="2.3 matrix矩阵"></a>2.3 matrix矩阵</h2><p><strong>matrix是ndarray的子类,</strong> 所以前面ndarray那些优点都保留了.</p>
+<p>同时, <strong>matrix全部都是二维的</strong>, 并且加入了一些更符合直觉的函数, 比如对于matrix对象而言, <strong>乘号运算符得到的是矩阵乘法的结果</strong>. 另外mat.I就是逆矩阵…</p>
+<p>不过应用最多的还是ndarray类型.</p>
+<h1 id="3-multiply、dot、-和matmul"><a href="#3-multiply、dot、-和matmul" class="headerlink" title="3. multiply、dot、 * 和matmul"></a>3. multiply、dot、 * 和matmul</h1><h2 id="3-1-np-multiply-函数"><a href="#3-1-np-multiply-函数" class="headerlink" title="3.1. np.multiply()函数"></a>3.1. np.multiply()函数</h2><p>函数作用： 数组和矩阵<strong>对应位置相乘</strong>，输出与相乘数组/矩阵的大小一致</p>
+<h2 id="3-2-np-dot-函数"><a href="#3-2-np-dot-函数" class="headerlink" title="3.2 np.dot()函数"></a>3.2 np.dot()函数</h2><p>函数作用：</p>
+<ul>
+<li>对于秩为1的数组，执行对应位置相乘，然后再相加；</li>
+<li>对于秩不为1的二维数组或者矩阵，执行矩阵乘法运算；超过二维的可以参考numpy库介绍。</li>
+</ul>
+<h2 id="3-3-星号（-）乘法运算"><a href="#3-3-星号（-）乘法运算" class="headerlink" title="3.3 星号（*）乘法运算"></a>3.3 星号（*）乘法运算</h2><p>函数作用：</p>
+<ul>
+<li>对<strong>数组</strong>执行<strong>对应位置相乘</strong></li>
+<li><p>对<strong>矩阵</strong>执行<strong>矩阵乘法</strong>运算</p>
+<p><a href="https://blog.csdn.net/zenghaitao0128/article/details/78715140" target="_blank" rel="noopener">参考链接</a></p>
+</li>
+</ul>
+<h2 id="3-4-matmul"><a href="#3-4-matmul" class="headerlink" title="3.4 matmul()"></a>3.4 matmul()</h2><p>两个数组的矩阵乘积。不允许使用标量乘法，<code>*</code>可以使用</p>
+<p><code>matmul</code>与<code>dot</code>基本一样，但有两个方面的不同：</p>
+<ul>
+<li>不允许使用标量进行乘法运算。</li>
+<li>矩阵堆栈一起广播，就好像矩阵是元素一样。</li>
+</ul>
+<h1 id="4-randn-与rand-的区别"><a href="#4-randn-与rand-的区别" class="headerlink" title="4. randn()与rand()的区别"></a>4. randn()与rand()的区别</h1><p>numpy中有一些常用的用来产生随机数的函数，randn()和rand()就属于这其中。 </p>
+<p>numpy.random.randn(d0, d1, …, dn)是从<strong>标准正态分布</strong>中返回一个或多个样本值。 </p>
+<p>numpy.random.rand(d0, d1, …, dn)的<strong>随机样本</strong>位于[0, 1)中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np </span><br><span class="line"></span><br><span class="line">arr1 = np.random.randn(<span class="number">2</span>,<span class="number">4</span>)</span><br><span class="line">print(arr1)</span><br><span class="line">print(<span class="string">'*****************************'</span>)</span><br><span class="line">arr2 = np.random.rand(<span class="number">2</span>,<span class="number">4</span>)</span><br><span class="line">print(arr2)</span><br><span class="line"></span><br><span class="line">[[<span class="number">-1.03021018</span>  <span class="number">0.5197033</span>   <span class="number">0.52117459</span> <span class="number">-0.70102661</span>]</span><br><span class="line"> [ <span class="number">0.98268569</span>  <span class="number">1.21940697</span> <span class="number">-1.095241</span>   <span class="number">-0.38161758</span>]]</span><br><span class="line">**********************************</span><br><span class="line">[[ <span class="number">0.19947349</span>  <span class="number">0.05282713</span>  <span class="number">0.56704222</span>  <span class="number">0.45479972</span>]</span><br><span class="line"> [ <span class="number">0.28827103</span>  <span class="number">0.1643551</span>   <span class="number">0.30486786</span>  <span class="number">0.56386943</span>]]</span><br></pre></td></tr></table></figure>
+<h1 id="5-filter"><a href="#5-filter" class="headerlink" title="5. filter()"></a>5. filter()</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">filter(function, iterable)</span><br></pre></td></tr></table></figure>
+<p>用于过滤序列，过滤掉不符合条件的元素，返回一个<strong>迭代器对象</strong>，如果要转换为列表，可以使用 list() 来转换。</p>
+<p>接收两个参数，第一个为<strong>函数</strong>，第二个为<strong>序列</strong>，序列的每个元素作为参数传递给函数进行判，然后返回 True 或 False，最后将<strong>返回 True 的元素放到新列表中</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_odd</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> n % <span class="number">2</span> == <span class="number">1</span></span><br><span class="line"> </span><br><span class="line">tmplist = filter(is_odd, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>])</span><br><span class="line">newlist = list(tmplist)</span><br><span class="line">print(newlist)</span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+<h1 id="6-lambda-表达式"><a href="#6-lambda-表达式" class="headerlink" title="6. lambda 表达式"></a>6. lambda 表达式</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">lambda</span> argument_list: expression</span><br></pre></td></tr></table></figure>
+<p>参数列表由<strong>逗号分隔</strong>的参数列表组成，表达式是使用这些参数的算术表达式。您可以将函数分配给变量以为其指定名称。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>sum = <span class="keyword">lambda</span> x，y：x + y</span><br><span class="line">&gt;&gt;&gt;sum(<span class="number">3</span>,<span class="number">4</span>）</span><br><span class="line"><span class="number">7</span></span><br></pre></td></tr></table></figure>
+<h1 id="7-zip"><a href="#7-zip" class="headerlink" title="7. zip()"></a>7. zip()</h1><p><strong>zip()</strong> 函数用于将<strong>可迭代的对象</strong>作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的对象，这样做的好处是节约了不少的内存。</p>
+<p>可以使用 list() 转换来输出列表。</p>
+<p>如果各个迭代器的元素个数不一致，则<strong>返回列表长度与最短的对象相同</strong>，利用 <strong>*</strong> 号操作符，可以将<strong>元组解压为列表</strong>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zip([iterable, ...])</span><br></pre></td></tr></table></figure>
+<ul>
+<li>iterabl – 一个或多个迭代器;</li>
+<li>返回一个对象。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>zipped = zip(a,b)     <span class="comment"># 返回一个对象</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>zipped</span><br><span class="line">&lt;zip object at <span class="number">0x103abc288</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(zipped)  <span class="comment"># list() 转换为列表</span></span><br><span class="line">[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(zip(a,c))              <span class="comment"># 元素个数与最短的列表一致</span></span><br><span class="line">[(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">5</span>), (<span class="number">3</span>, <span class="number">6</span>)]</span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a1, a2 = zip(*zip(a,b))  <span class="comment"># 与zip相反，zip(*) 可理解为解压，返回二维矩阵式</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(a1)</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(a2)</span><br><span class="line">[<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br></pre></td></tr></table></figure>
+<h1 id="8-set"><a href="#8-set" class="headerlink" title="8. set()"></a>8. set()</h1><p><strong>set()</strong> 函数创建一个<strong>无序不重复元素集</strong>，可进行关系测试，删除重复数据，还可以计算交集、差集、并集等。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">set</span><span class="params">([iterable])</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>iterable – 可迭代对象对象</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;x = set(<span class="string">'runoob'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = set(<span class="string">'google'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x, y</span><br><span class="line">(set([<span class="string">'b'</span>, <span class="string">'r'</span>, <span class="string">'u'</span>, <span class="string">'o'</span>, <span class="string">'n'</span>]), set([<span class="string">'e'</span>, <span class="string">'o'</span>, <span class="string">'g'</span>, <span class="string">'l'</span>]))   <span class="comment"># 重复的被删除</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x &amp; y         <span class="comment"># 交集</span></span><br><span class="line">set([<span class="string">'o'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x | y         <span class="comment"># 并集</span></span><br><span class="line">set([<span class="string">'b'</span>, <span class="string">'e'</span>, <span class="string">'g'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>, <span class="string">'n'</span>, <span class="string">'r'</span>, <span class="string">'u'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x - y         <span class="comment"># 差集</span></span><br><span class="line">set([<span class="string">'r'</span>, <span class="string">'b'</span>, <span class="string">'u'</span>, <span class="string">'n'</span>])</span><br></pre></td></tr></table></figure>
+<h1 id="9-format"><a href="#9-format" class="headerlink" title="9. format"></a>9. format</h1><p>格式化字符串的函数 str.format()，它增强了字符串格式化的功能。</p>
+<p>基本语法是通过 {} 和 : 来代替以前的 % 。</p>
+<p>format 函数可以接受不限个参数，位置可以不按顺序。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="string">"&#123;&#125; &#123;&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"world"</span>)    <span class="comment"># 不设置指定位置，按默认顺序</span></span><br><span class="line"><span class="string">'hello world'</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"&#123;0&#125; &#123;1&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"world"</span>)  <span class="comment"># 设置指定位置</span></span><br><span class="line"><span class="string">'hello world'</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"&#123;1&#125; &#123;0&#125; &#123;1&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"world"</span>)  <span class="comment"># 设置指定位置</span></span><br><span class="line"><span class="string">'world hello world'</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">"网站名：&#123;name&#125;, 地址 &#123;url&#125;"</span>.format(name=<span class="string">"菜鸟教程"</span>, url=<span class="string">"www.runoob.com"</span>))</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 通过字典设置参数</span></span><br><span class="line">site = &#123;<span class="string">"name"</span>: <span class="string">"菜鸟教程"</span>, <span class="string">"url"</span>: <span class="string">"www.runoob.com"</span>&#125;</span><br><span class="line">print(<span class="string">"网站名：&#123;name&#125;, 地址 &#123;url&#125;"</span>.format(**site))</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 通过列表索引设置参数</span></span><br><span class="line">my_list = [<span class="string">'菜鸟教程'</span>, <span class="string">'www.runoob.com'</span>]</span><br><span class="line">print(<span class="string">"网站名：&#123;0[0]&#125;, 地址 &#123;0[1]&#125;"</span>.format(my_list))  <span class="comment"># "0" 是必须的</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过元组设置参数</span></span><br><span class="line">site = (<span class="string">"name"</span>, <span class="string">"菜鸟教程"</span>, <span class="string">"url"</span>, <span class="string">"www.runoob.com"</span>)</span><br><span class="line">print(<span class="string">'&#123;&#125;-&#123;&#125;-&#123;&#125;-&#123;&#125;'</span>.format(*site))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>name-菜鸟教程-url-www.runoob.com</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/14/CRF分词实验/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="行者">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="行者">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/14/CRF分词实验/" itemprop="url">CRF++ 分词实验</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-14T15:12:58+08:00">
+                2018-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/NLP/" itemprop="url" rel="index">
+                    <span itemprop="name">NLP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h1><p>在Windows下的安装很简单，其实严格来讲不能说是安装。我们解压我们下载的压缩包文件到某一个目录下面。你可能会得到如下所示的文件，（版本不同，可能会有所不同。）</p>
+<p><img src="/2018/12/14/CRF分词实验/目录.jpg" alt="目录"></p>
+<ul>
+<li>doc文件夹：就是官方主页的内容</li>
+<li>example文件夹：有四个任务的训练数据（test.data）、测试数据(train.data)和模板文件(template),还有一个执行脚本文件exec.sh。</li>
+<li>sdk文件夹：CRF++的头文件和静态链接库。</li>
+<li>clr_learn.exe:CRF++的训练程序</li>
+<li>crl_test.exe:CRF++的测试程序</li>
+<li>libcrffpp.dll:训练程序和测试程序需要使用的静态链接库。 </li>
+</ul>
+<p><strong>实际上，需要使用的就是crf_learn.exe，crf_test.exe和libcrfpp.dll，这三个文件。</strong></p>
+<h1 id="2-使用例子"><a href="#2-使用例子" class="headerlink" title="2. 使用例子"></a>2. 使用例子</h1><h2 id="2-1-训练"><a href="#2-1-训练" class="headerlink" title="2.1 训练"></a>2.1 训练</h2><p>先拿example中的某个例子做一下测试。例如：example中 seg 文件夹，其中原有4个文件：exec.sh；template；test.data；train.data。将crf_learn.exe；crf_test.exe；libcrfpp.dll三个文件复制到这个文件夹（seg）底下。 </p>
+<p>　　在命令窗口中，cd到该文件夹，然后输入以下命令进行训练模型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crf_learn template_file train_file model_file </span><br><span class="line">eg:crf_learn template train.data model</span><br></pre></td></tr></table></figure>
+<p>你可以看到控制台上打印处的信息，<strong>并会产生一个新的文件：model</strong>。这个训练过程的时间、迭代次数等信息就会输出到控制台上（感觉是crf_learn程序的输出信息到标准输出流上了），如果想要保存这些信息，我们可以将这些标准输出流到文件，命令格式为： </p>
+<p><strong>模型就用它例子中的模型</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crf_learn template_file train_file model_file &gt;&gt; train_info_file </span><br><span class="line">eg:crf_learn template train.data model &gt;&gt; model_out.txt</span><br></pre></td></tr></table></figure>
+<p>在这里有四个参数可以调整：<br><strong>-a CRF-L2 or CRF-L1</strong><br>规范化算法的选择。默认是CRF-L2。一般来说L2算法效果要比L1算法稍微好一点，虽然L1算法中非零特征的数值要比L2中大幅度的小。</p>
+<p><strong>-c float</strong><br>这个参数设置CRF的hyper-parameter。<strong>c的数值越大，CRF拟合训练数据的程度越高</strong>。这个参数可以调整过拟合和不拟合之间的平衡度。这个参数可以通过交叉验证等方法寻找较优的参数。</p>
+<p><strong>-f NUM</strong><br>这个参数设置特征的cut-off threshold。CRF++使用训练数据中至少出现NUM次的特征。默认值为1。当使用CRF++到大规模数据的时候，只出现一次的特征可能会有百万个，这个选项就会在这样的情况下起作用了。</p>
+<p><strong>-p NUM</strong><br>如果电脑有多个CPU ,那么可以通过多线程提升训练速度。NUM是线程数量。</p>
+<p>举一个带参数的命令例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clr_learn -f 3 -c 4.0 tempalte train.data model  # 过滤掉了频数低于3的特征，并且设超参数为1.5</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-2-用测试集预测"><a href="#2-2-用测试集预测" class="headerlink" title="2.2 用测试集预测"></a>2.2 用测试集预测</h2><p>输入命令进行测试数据,测试程序的命令为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crf_test -m model_file test_file </span><br><span class="line">eg: crf_test -m model test.data</span><br></pre></td></tr></table></figure>
+<p>同样，与crf_learn类似，输出的结果放到了标准输出流上，而这个输出结果是最重要的预测结果信息（预测文件的内容+预测标注），同样可以使用重定向，将结果保存下来，命令为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crf_test -m model_file test_files &gt;&gt; result_file </span><br><span class="line">eg：crf_test -m model test.data &gt;&gt; output.txt</span><br></pre></td></tr></table></figure>
+<p>你会发现生成一个新的文件output.txt，就是我们的测试结果。</p>
+<h1 id="3-参考资料"><a href="#3-参考资料" class="headerlink" title="3.参考资料"></a>3.参考资料</h1><p><a href="https://blog.csdn.net/u010626937/article/details/78414292" target="_blank" rel="noopener">CRF++使用教程</a></p>
+<p><a href="https://blog.csdn.net/mg1616/article/details/45545919" target="_blank" rel="noopener">Windows下CRF++ 分词实践及Python分词效果评测</a></p>
+<p><a href="http://www.52nlp.cn/%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E5%85%A5%E9%97%A8%E4%B9%8B%E5%AD%97%E6%A0%87%E6%B3%A8%E6%B3%954" target="_blank" rel="noopener">中文分词入门之字标注法4</a></p>
+<p><a href="https://blog.csdn.net/marising/article/details/5769653" target="_blank" rel="noopener">CRF++中文分词使用指南</a></p>
+<p><a href="https://blog.csdn.net/lilong117194/article/details/81204349" target="_blank" rel="noopener">windows10下Anaconda spyder安装CRF++的python接口</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/07/序列模型学习笔记/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="行者">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="行者">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/07/序列模型学习笔记/" itemprop="url">序列模型学习笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-07T19:59:38+08:00">
+                2018-12-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/DeepLearning/" itemprop="url" rel="index">
+                    <span itemprop="name">DeepLearning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-RNN"><a href="#1-RNN" class="headerlink" title="1 RNN"></a>1 RNN</h1><h2 id="1-1-前向传播"><a href="#1-1-前向传播" class="headerlink" title="1.1 前向传播"></a>1.1 前向传播</h2><p>对于序列数据，使用标准神经网络存在以下问题：</p>
+<ul>
+<li>对于不同的示例，输入和输出可能有不同的长度，因此输入层和输出层的神经元数量无法固定。</li>
+<li>从输入文本的不同位置学到的同一特征无法共享。</li>
+<li>模型中的参数太多，计算量太大。</li>
+</ul>
+<p>为了解决这些问题，引入<strong>循环神经网络（Recurrent Neural Network，RNN）</strong>。一种循环神经网络的结构如下图所示：</p>
+<p><strong>RNN的网络结构和神经网络一样，里面有很多神经元，较神经网络而言，每层都有两个输入，一个为上一层的输出，一个为新的输入。并且有2个输出。</strong></p>
+<p><strong>一个时间序列就是一层神经网络。</strong>一个rnn处理1000个时间序列的数据集，这就是一个1000层的神经网络。</p>
+<p><img src="/2018/12/07/序列模型学习笔记/rnn0.jpg" alt="rnn0"></p>
+<p><img src="/2018/12/07/序列模型学习笔记/RNN.png" alt="RNN"></p>
+<p>零时刻需要构造一个激活值a(0)，最常用的是零向量，也可以随机初始化。</p>
+<p><img src="/2018/12/07/序列模型学习笔记/rnn (1" alt="rnn (1)">.png)</p>
+<p>当元素 x⟨t⟩输入对应时间步（Time Step）的隐藏层的同时，该隐藏层也会接收来自上一时间步的隐藏层的激活值 a⟨t−1⟩，其中 a⟨0⟩ 一般直接初始化为零向量。一个时间步输出一个对应的预测结果 y^⟨t⟩。</p>
+<p>循环神经网络从左向右扫描数据，同时<strong>每个时间步的参数也是共享的</strong>，输入、激活、输出的参数对应为 Wax 、Waa、Wya。</p>
+<p>下图是一个 RNN 神经元的结构：</p>
+<p><img src="/2018/12/07/序列模型学习笔记/rnn_step_forward.png" alt="rnn_step_forward"></p>
+<p>前向传播过程的公式如下：</p>
+<p><img src="/2018/12/07/序列模型学习笔记/前向公式.jpg" alt="前向公式"></p>
+<p>激活函数 g1通常选择 tanh，有时也用 ReLU；g2可选 sigmoid 或 softmax，取决于需要的输出类型。</p>
+<p>为了进一步简化公式以方便运算，可以将 Waa、Wax<strong>水平并列</strong>为一个矩阵 Wa，同时 a⟨t−1⟩和 x⟨t⟩ <strong>上下堆叠</strong>成一个矩阵。则有：(<strong>分块矩阵的写法，注意对应顺序</strong>。下图中 Wa 的写反了)</p>
+<p><img src="/2018/12/07/序列模型学习笔记/分块.jpg" alt="分块"></p>
+<p><strong>前向传播代码</strong>：</p>
+<p>输入：xt  其中(n_x, m, T_x)  n_x 为特征，m为样本数，T_x为时间步数</p>
+<p>返回值：a_next, yt_pred, cache</p>
+<p>中间值：因为反向传播需要，所以存储了  a_next,  a_prev,  xt,  parameters</p>
+<p><strong>因为每个时间步共享参数，所以参数不变</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 单时间步</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rnn_cell_forward</span><span class="params">(xt, a_prev, parameters)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    Implements a single forward step of the RNN-cell as described in Figure (2)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Arguments:</span></span><br><span class="line"><span class="string">    xt -- your input data at timestep "t", numpy array of shape (n_x, m).</span></span><br><span class="line"><span class="string">    a_prev -- Hidden state at timestep "t-1", numpy array of shape (n_a, m)</span></span><br><span class="line"><span class="string">    parameters -- python dictionary containing:</span></span><br><span class="line"><span class="string">                        Wax -- Weight matrix multiplying the input, numpy array of shape (n_a, n_x)</span></span><br><span class="line"><span class="string">                        Waa -- Weight matrix multiplying the hidden state, numpy array of shape (n_a, n_a)</span></span><br><span class="line"><span class="string">                        Wya -- Weight matrix relating the hidden-state to the output, numpy array of shape (n_y, n_a)</span></span><br><span class="line"><span class="string">                        ba --  Bias, numpy array of shape (n_a, 1)</span></span><br><span class="line"><span class="string">                        by -- Bias relating the hidden-state to the output, numpy array of shape (n_y, 1)</span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">    a_next -- next hidden state, of shape (n_a, m)</span></span><br><span class="line"><span class="string">    yt_pred -- prediction at timestep "t", numpy array of shape (n_y, m)</span></span><br><span class="line"><span class="string">    cache -- tuple of values needed for the backward pass, contains (a_next, a_prev, xt, parameters)</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Retrieve parameters from "parameters"</span></span><br><span class="line">    Wax = parameters[<span class="string">"Wax"</span>]</span><br><span class="line">    Waa = parameters[<span class="string">"Waa"</span>]</span><br><span class="line">    Wya = parameters[<span class="string">"Wya"</span>]</span><br><span class="line">    ba = parameters[<span class="string">"ba"</span>]</span><br><span class="line">    by = parameters[<span class="string">"by"</span>]</span><br><span class="line"></span><br><span class="line">    a_next = np.tanh(np.dot(Wax, xt) + np.dot(Waa, a_prev) + ba)</span><br><span class="line">    <span class="comment"># compute output of the current cell using the formula given above</span></span><br><span class="line">    yt_pred = softmax(np.dot(Wya, a_next) + by) </span><br><span class="line">    </span><br><span class="line">    <span class="comment"># store values you need for backward propagation in cache</span></span><br><span class="line">    cache = (a_next, a_prev, xt, parameters)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> a_next, yt_pred, cache</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 多时间步</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rnn_forward</span><span class="params">(x, a0, parameters)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    Implement the forward propagation of the recurrent neural network described in Figure (3).</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Arguments:</span></span><br><span class="line"><span class="string">    x -- Input data for every time-step, of shape (n_x, m, T_x).</span></span><br><span class="line"><span class="string">    a0 -- Initial hidden state, of shape (n_a, m)</span></span><br><span class="line"><span class="string">    parameters -- python dictionary containing:</span></span><br><span class="line"><span class="string">                        Waa -- Weight matrix multiplying the hidden state, numpy array of shape (n_a, n_a)</span></span><br><span class="line"><span class="string">                        Wax -- Weight matrix multiplying the input, numpy array of shape (n_a, n_x)</span></span><br><span class="line"><span class="string">                        Wya -- Weight matrix relating the hidden-state to the output, numpy array of shape (n_y, n_a)</span></span><br><span class="line"><span class="string">                        ba --  Bias numpy array of shape (n_a, 1)</span></span><br><span class="line"><span class="string">                        by -- Bias relating the hidden-state to the output, numpy array of shape (n_y, 1)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">    a -- Hidden states for every time-step, numpy array of shape (n_a, m, T_x)</span></span><br><span class="line"><span class="string">    y_pred -- Predictions for every time-step, numpy array of shape (n_y, m, T_x)</span></span><br><span class="line"><span class="string">    caches -- tuple of values needed for the backward pass, contains (list of caches, x)</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Initialize "caches" which will contain the list of all caches</span></span><br><span class="line">    caches = []</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Retrieve dimensions from shapes of x and parameters["Wya"]</span></span><br><span class="line">    n_x, m, T_x = x.shape</span><br><span class="line">    n_y, n_a = parameters[<span class="string">"Wya"</span>].shape</span><br><span class="line">    </span><br><span class="line">    <span class="comment">### START CODE HERE ###</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># initialize "a" and "y" with zeros (≈2 lines)</span></span><br><span class="line">    a = np.zeros((n_a, m, T_x))</span><br><span class="line">    y_pred = np.zeros((n_y, m, T_x))</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># Initialize a_next (≈1 line)</span></span><br><span class="line">    a_next = a0</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># loop over all time-steps</span></span><br><span class="line">    <span class="keyword">for</span> t <span class="keyword">in</span> range(T_x):</span><br><span class="line">        <span class="comment"># Update next hidden state, compute the prediction, get the cache (≈1 line)</span></span><br><span class="line">        a_next, yt_pred, cache = rnn_cell_forward(x[:,:,t], a_next, parameters)</span><br><span class="line">        <span class="comment"># Save the value of the new "next" hidden state in a (≈1 line)</span></span><br><span class="line">        a[:,:,t] = a_next</span><br><span class="line">        <span class="comment"># Save the value of the prediction in y (≈1 line)</span></span><br><span class="line">        y_pred[:,:,t] = yt_pred</span><br><span class="line">        <span class="comment"># Append "cache" to "caches" (≈1 line)</span></span><br><span class="line">        caches.append(cache)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># store values needed for backward propagation in cache</span></span><br><span class="line">    caches = (caches, x)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> a, y_pred, caches</span><br></pre></td></tr></table></figure>
+<h2 id="1-2-反向传播："><a href="#1-2-反向传播：" class="headerlink" title="1.2 反向传播："></a>1.2 反向传播：</h2><p>为了计算反向传播过程，需要先定义一个损失函数。单个位置上（或者说单个时间步上）某个单词的预测值的损失函数采用<strong>交叉熵损失函数</strong>，如下所示：</p>
+<p><img src="/2018/12/07/序列模型学习笔记/反向传播.jpg" alt="反向传播"></p>
+<p>循环神经网络的反向传播被称为<strong>通过时间反向传播（Backpropagation through time）</strong>，因为从右向左计算的过程就像是时间倒流。</p>
+<p>更详细的计算公式如下：</p>
+<p><img src="/2018/12/07/序列模型学习笔记/rnn_cell_backprop.png" alt="rnn_cell_backprop"></p>
+<h2 id="1-3-梯度消失"><a href="#1-3-梯度消失" class="headerlink" title="1.3 梯度消失"></a>1.3 梯度消失</h2><p><img src="/2018/12/07/序列模型学习笔记/梯度消失.jpg" alt="梯度消失"></p>
+<p>对于以上两个句子，后面的动词单复数形式由前面的名词的单复数形式决定。但是<strong>基本的 RNN 不擅长捕获这种长期依赖关系</strong>。究其原因，由于梯度消失，在反向传播时，很深的神经网络，从输出y^得到的梯度很难传播回去，很难影响靠前层的权重，后面层的输出误差很难影响到较靠前层的计算，网络很难调整靠前的计算。所以很难让它记住是单数还是复数。</p>
+<p>在反向传播时，随着层数的增多，梯度不仅可能指数型下降，也有可能指数型上升，即梯度爆炸。不过梯度爆炸比较容易发现，因为参数会急剧膨胀到数值溢出（可能显示为 NaN）。这时可以采用<strong>梯度修剪（Gradient Clipping）</strong>来解决：观察梯度向量，如果它大于某个阈值，则缩放梯度向量以保证其不会太大。相比之下，梯度消失问题更难解决。<strong>GRU 和 LSTM 都可以作为缓解梯度消失问题的方案</strong>。</p>
+<h1 id="2-GRU"><a href="#2-GRU" class="headerlink" title="2 GRU"></a>2 GRU</h1><p><strong>GRU（Gated Recurrent Units, 门控循环单元）</strong>改善了 RNN 的隐藏层，使其可以更好地捕捉深层连接，并改善了梯度消失问题。</p>
+<p><img src="/2018/12/07/序列模型学习笔记/gru3.jpg" alt="gru3"></p>
+<p>当我们从左到右读上面这个句子时，GRU 单元有一个新的变量称为 c，代表<strong>记忆细胞（Memory Cell）</strong>，其作用是提供记忆的能力，记住例如前文主语是单数还是复数等信息。在时间 t，记忆细胞的值 c⟨t⟩等于输出的激活值 a⟨t⟩；c~⟨t⟩ 代表下一个 c 的候选值。Γu 代表<strong>更新门（Update Gate）</strong>，用于决定什么时候更新记忆细胞的值。以上结构的具体公式为：</p>
+<p><img src="/2018/12/07/序列模型学习笔记/gru.jpg" alt="gru"></p>
+<p>当使用 sigmoid 作为激活函数 σ 来得到 Γu时，Γu的值在 0 到 1 的范围内，且大多数时间非常接近于 0 或 1。当 Γu=1时，c⟨t⟩被更新为 c~⟨t⟩，否则保持为 c⟨t−1⟩。因为 Γu可以很接近 0，因此 c⟨t⟩几乎就等于 c⟨t−1⟩。在经过很长的序列后，c的值依然被维持，从而实现“记忆”的功能。</p>
+<p>因为sigmoid的值很容易取到0，或者非常接近0，这时c(t)=c(t-1) ,有利于维持细胞的值。Γu很接近0，但不是0 ，就不会有梯度消失的问题了。<strong>有效缓解了梯度消失的问题。</strong></p>
+<p>以上实际上是简化过的 GRU 单元，但是蕴涵了 GRU 最重要的思想。完整的 GRU 单元添加了一个新的<strong>相关门（Relevance Gate）</strong> Γr，表示 c~⟨t⟩和 c⟨t-1⟩的相关性。因此，表达式改为如下所示：</p>
+<p><img src="/2018/12/07/序列模型学习笔记/gru2.jpg" alt="gru2"></p>
+<h1 id="3-LSTM"><a href="#3-LSTM" class="headerlink" title="3 LSTM"></a>3 LSTM</h1><p><strong>LSTM（Long Short Term Memory，长短期记忆）</strong>网络比 GRU 更加灵活和强大，它额外引入了<strong>遗忘门（Forget Gate）</strong> ΓfΓf和<strong>输出门（Output Gate）</strong> ΓoΓo。其结构图和公式如下：</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/05/知识图谱构建技术综述/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1139,279 +1868,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/19/基于Hexo-Github-Pages搭建个人博客/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="行者">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="行者">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/19/基于Hexo-Github-Pages搭建个人博客/" itemprop="url">基于Hexo + Github Pages搭建个人博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-19T20:51:27+08:00">
-                2018-11-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>摘要：搭建个人博客</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/19/基于Hexo-Github-Pages搭建个人博客/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/19/hello-world/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="行者">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="行者">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/19/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-19T17:47:12+08:00">
-                2018-11-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/19/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1455,7 +1918,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1466,7 +1929,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1477,7 +1940,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1514,7 +1977,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

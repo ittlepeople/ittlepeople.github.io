@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、基本命令1.1 相对路径：12345~     # home文件夹cd .. # 返回上级目录cd ../../ # 往上返回两次cd -  # 返回上级目录cd ~  # 返回home文件夹 1.2 绝对路径：1cd /home/ubuntu/Documents 1.3 浏览文件夹下内容：12345678910# 查看文件夹下的文件及文件夹(ls: list)ls# 显示文件夹下的文件及文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux基本命令">
+<meta property="og:url" content="http://yoursite.com/2019/01/14/Linux基本命令/index.html">
+<meta property="og:site_name" content="行者">
+<meta property="og:description" content="一、基本命令1.1 相对路径：12345~     # home文件夹cd .. # 返回上级目录cd ../../ # 往上返回两次cd -  # 返回上级目录cd ~  # 返回home文件夹 1.2 绝对路径：1cd /home/ubuntu/Documents 1.3 浏览文件夹下内容：12345678910# 查看文件夹下的文件及文件夹(ls: list)ls# 显示文件夹下的文件及文件">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/01/14/Linux基本命令/Linux基本命令/文件权限.png">
+<meta property="og:updated_time" content="2019-02-19T07:48:14.271Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux基本命令">
+<meta name="twitter:description" content="一、基本命令1.1 相对路径：12345~     # home文件夹cd .. # 返回上级目录cd ../../ # 往上返回两次cd -  # 返回上级目录cd ~  # 返回home文件夹 1.2 绝对路径：1cd /home/ubuntu/Documents 1.3 浏览文件夹下内容：12345678910# 查看文件夹下的文件及文件夹(ls: list)ls# 显示文件夹下的文件及文件">
+<meta name="twitter:image" content="http://yoursite.com/2019/01/14/Linux基本命令/Linux基本命令/文件权限.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/01/14/Linux基本命令/">
+
+
+
+
+
+  <title>Linux基本命令 | 行者</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">行者</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">终身学习</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/14/Linux基本命令/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="行者">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="行者">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux基本命令</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-14T21:40:51+08:00">
+                2019-01-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、基本命令"><a href="#一、基本命令" class="headerlink" title="一、基本命令"></a>一、基本命令</h1><h2 id="1-1-相对路径："><a href="#1-1-相对路径：" class="headerlink" title="1.1 相对路径："></a>1.1 相对路径：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">~     # home文件夹</span><br><span class="line">cd .. # 返回上级目录</span><br><span class="line">cd ../../ # 往上返回两次</span><br><span class="line">cd -  # 返回上级目录</span><br><span class="line">cd ~  # 返回home文件夹</span><br></pre></td></tr></table></figure>
+<h2 id="1-2-绝对路径："><a href="#1-2-绝对路径：" class="headerlink" title="1.2 绝对路径："></a>1.2 绝对路径：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /home/ubuntu/Documents</span><br></pre></td></tr></table></figure>
+<h2 id="1-3-浏览文件夹下内容："><a href="#1-3-浏览文件夹下内容：" class="headerlink" title="1.3 浏览文件夹下内容："></a>1.3 浏览文件夹下内容：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看文件夹下的文件及文件夹(ls: list)</span></span><br><span class="line">ls</span><br><span class="line"><span class="comment"># 显示文件夹下的文件及文件夹详细信息(-l: long)</span></span><br><span class="line">ls -l</span><br><span class="line"><span class="comment"># 显示文件夹下的文件及文件夹详细信息，显示文件大小单位(-lh: long human)</span></span><br><span class="line">ls -lh</span><br><span class="line"><span class="comment"># 显示全部（包含隐藏）文件夹下的文件及文件夹详细信息(-a: all)</span></span><br><span class="line">ls -a</span><br><span class="line"><span class="comment"># 显示ls其他功能</span></span><br><span class="line">ls --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-4-创建文件："><a href="#1-4-创建文件：" class="headerlink" title="1.4 创建文件："></a>1.4 创建文件：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入文件夹，在该文件夹内创建</span></span><br><span class="line">touch file1</span><br><span class="line"><span class="comment"># 创建多个文件</span></span><br><span class="line">touch file2 file3 file4</span><br><span class="line"><span class="comment"># 创建文件夹</span></span><br><span class="line">mkdir folder</span><br></pre></td></tr></table></figure>
+<h2 id="1-5-复制文件："><a href="#1-5-复制文件：" class="headerlink" title="1.5 复制文件："></a>1.5 复制文件：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 复制file1到filecopy，但是不可检测filecopy是否已经存在</span></span><br><span class="line">cp file1 file1copy</span><br><span class="line"><span class="comment"># 复制file1到filecopy，检测filecopy是否已经存在（-i: interactive）</span></span><br><span class="line">cp -i file1 filecopy</span><br><span class="line"><span class="comment"># 复制文件到另一个文件夹中</span></span><br><span class="line">cp file1 folder/</span><br><span class="line">cp file1 file2 folder/</span><br><span class="line"><span class="comment"># 复制一个文件中的所有文件到另一个文件夹中(-R 递归)</span></span><br><span class="line">cp -R folder1/ folder2/</span><br><span class="line"><span class="comment"># 复制所有以file开头的文件到另一个文件夹中</span></span><br><span class="line">cp file* folder2/</span><br></pre></td></tr></table></figure>
+<h2 id="1-6-移动文件："><a href="#1-6-移动文件：" class="headerlink" title="1.6 移动文件："></a>1.6 移动文件：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 移动文件到文件夹</span></span><br><span class="line">mv file1 folder1/</span><br><span class="line"><span class="comment"># 重命名</span></span><br><span class="line">mv file2 file2rename</span><br></pre></td></tr></table></figure>
+<h2 id="1-7-删除文件："><a href="#1-7-删除文件：" class="headerlink" title="1.7 删除文件："></a>1.7 删除文件：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 只能删除空文件夹</span></span><br><span class="line">rmdir folder3</span><br><span class="line"><span class="comment"># 删除文件夹及里面内容(-r 递归)</span></span><br><span class="line">rm -r folder3</span><br><span class="line"><span class="comment"># 删除文件(每一个都询问确认)</span></span><br><span class="line">rm -i file1 file2 file3</span><br><span class="line"><span class="comment"># 删除文件(超过3个才会询问确认)</span></span><br><span class="line">rm -I file1 file2</span><br></pre></td></tr></table></figure>
+<h2 id="1-8-修改文件："><a href="#1-8-修改文件：" class="headerlink" title="1.8 修改文件："></a>1.8 修改文件：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建（修改）文件</span></span><br><span class="line">nano t.py</span><br><span class="line"><span class="comment"># crtl + x 保存退出![文件权限](F:\blog\hexo\source\_posts\Linux基本命令\文件权限.png)![文件权限](F:\blog\hexo\source\_posts\Linux基本命令\文件权限.png)</span></span><br><span class="line"><span class="comment"># 运行Python脚本</span></span><br><span class="line">python3 t.py</span><br><span class="line"><span class="comment"># 显示在屏幕上</span></span><br><span class="line">cat t.py</span><br><span class="line"><span class="comment"># 复制到另一个文件</span></span><br><span class="line">cat t.py &gt; t1.py</span><br><span class="line"><span class="comment"># 把多个文件合并到新的文件中</span></span><br><span class="line">cat t.py t1.py &gt; t2.py</span><br><span class="line"><span class="comment"># 把文件追加到已有文件之后</span></span><br><span class="line">cat t3.py &gt;&gt; t2.py</span><br></pre></td></tr></table></figure>
+<h2 id="1-9-显示当前路径"><a href="#1-9-显示当前路径" class="headerlink" title="1.9 显示当前路径"></a>1.9 显示当前路径</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure>
+<h1 id="二、文件权限"><a href="#二、文件权限" class="headerlink" title="二、文件权限"></a>二、文件权限</h1><p><img src="/2019/01/14/Linux基本命令/Linux基本命令\文件权限.png" alt="文件权限"></p>
+<ul>
+<li><code>Type</code>: 很多种 (最常见的是 <code>-</code> 为文件, <code>d</code> 为文件夹, 其他的还有<code>l</code>, <code>n</code> … 这种东西, 真正自己遇到了, 网上再搜就好, 一次性说太多记不住的).</li>
+<li><code>User</code>: 后面跟着的三个空是使用 User 的身份能对这个做什么处理 (<code>r</code> 能读; <code>w</code> 能写; <code>x</code>能执行; <code>-</code> 不能完成某个操作).</li>
+<li><code>Group</code>: 一个 Group 里可能有一个或多个 user, 这些权限的样式和 User 一样.</li>
+<li><code>Others</code>: 除了 User 和 Group 以外人的权限.</li>
+</ul>
+<p>修改权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 形式如下：</span></span><br><span class="line">chmod [谁][怎么修改] [哪个文件]</span><br><span class="line"><span class="comment"># 修改t1.py的user加上r(可读)</span></span><br><span class="line">chmod u+r t1.py</span><br><span class="line">ls -l t1.py <span class="comment"># 显示 t1.py 的权限</span></span><br><span class="line"><span class="comment"># t1.py的u,g,o 都加上w(可写)</span></span><br><span class="line">chmod a+w t1.py</span><br><span class="line">ls -l t1.py <span class="comment"># 显示 t1.py 的权限</span></span><br><span class="line"><span class="comment"># t1.py的u,g 都加上r,w(可读、写)</span></span><br><span class="line">chmod ug+rw t1.py</span><br><span class="line">ls -l t1.py <span class="comment"># 显示 t1.py 的权限</span></span><br></pre></td></tr></table></figure>
+<p>[谁]</p>
+<ul>
+<li><code>u</code>: 对于 User 修改</li>
+<li><code>g</code>: 对于 Group 修改</li>
+<li><code>o</code>: 对于 Others 修改</li>
+<li><code>a</code>: (all) 对于所有人修改</li>
+</ul>
+<p>[怎么修改]</p>
+<ul>
+<li><code>+</code>, <code>-</code>, <code>=</code>: 作用的形式, 加上, 减掉, 等于某些权限</li>
+<li><code>r</code>, <code>w</code>, <code>x</code> 或者多个权限一起, 比如 <code>rx</code></li>
+</ul>
+<p>[哪个文件]</p>
+<ul>
+<li>施加操作的文件, 可以为多个</li>
+</ul>
+<p>把 .py 文件可执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod u+w t1.py</span><br></pre></td></tr></table></figure>
+<p>t1.py 文件内加上一句话：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定用什么打开</span></span><br><span class="line"><span class="comment">#！/home/xing/anaconda3/bin/python3</span></span><br></pre></td></tr></table></figure>
+<h1 id="三、VMware安装Ubuntu"><a href="#三、VMware安装Ubuntu" class="headerlink" title="三、VMware安装Ubuntu"></a>三、VMware安装Ubuntu</h1><p>3.1 安装拼音输入法</p>
+<p>3.2 安装VMware Tools，实现窗口的适应大小，Windows和虚拟机实现复制粘贴。</p>
+<p>3.3 Ubuntu系统安装之后，一般没有pip2和pip3，需要手动安装；之后会同时出现pip（不知道什么意思）, pip2, pip3。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装pip2</span></span><br><span class="line">sudo apt-get install python-pip</span><br><span class="line"><span class="comment"># 安装pip3</span></span><br><span class="line">sudo apt-get install python-pip</span><br></pre></td></tr></table></figure>
+<h1 id="四、Anaconda环境管理"><a href="#四、Anaconda环境管理" class="headerlink" title="四、Anaconda环境管理"></a>四、Anaconda环境管理</h1><p>参考教程：<a href="https://blog.csdn.net/yimingsilence/article/details/79388205" target="_blank" rel="noopener">https://blog.csdn.net/yimingsilence/article/details/79388205</a></p>
+<h2 id="1-管理conda"><a href="#1-管理conda" class="headerlink" title="1. 管理conda"></a>1. 管理conda</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看版本：</span></span><br><span class="line">conda --version</span><br><span class="line"><span class="comment"># 升级版本：</span></span><br><span class="line">conda update conda</span><br></pre></td></tr></table></figure>
+<h2 id="2-创建并激活一个环境"><a href="#2-创建并激活一个环境" class="headerlink" title="2. 创建并激活一个环境"></a>2. 创建并激活一个环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建环境：</span></span><br><span class="line"><span class="comment"># 环境名字为：xsc 同时安装python3.6 numpy pandas 包</span></span><br><span class="line">conda create --name xsc python=3.6 numpy pandas  </span><br><span class="line"><span class="comment"># 激活环境</span></span><br><span class="line">Linux，OS X: <span class="built_in">source</span> activate snowflakes</span><br><span class="line">Windows：activate snowflake`</span><br><span class="line"><span class="comment"># 如果我们没有指定安装python的版本，conda会安装我们最初安装conda时所装的那个版本的python。</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-列出所有的环境"><a href="#3-列出所有的环境" class="headerlink" title="3. 列出所有的环境"></a>3. 列出所有的环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出所有的环境</span></span><br><span class="line">conda info --envs</span><br><span class="line">或者：</span><br><span class="line">conda env list</span><br><span class="line"><span class="comment"># 确认当前环境</span></span><br><span class="line">conda info -envis</span><br><span class="line"><span class="comment"># 复制一个环境</span></span><br><span class="line">conda create -n flowers --<span class="built_in">clone</span> xsc</span><br><span class="line"><span class="comment"># 删除一个环境</span></span><br><span class="line">conda remove -n flowers --all</span><br><span class="line">或</span><br><span class="line">conda env remove -n py3</span><br><span class="line"><span class="comment"># 注销环境</span></span><br><span class="line">·Linux，OS X：<span class="built_in">source</span> deactivate</span><br><span class="line">·Windows：deactivate</span><br></pre></td></tr></table></figure>
+<h2 id="4-管理Python"><a href="#4-管理Python" class="headerlink" title="4. 管理Python"></a>4. 管理Python</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查哪个版本的python可以被安装</span></span><br><span class="line">conda search --full --name python</span><br></pre></td></tr></table></figure>
+<h2 id="5-管理包"><a href="#5-管理包" class="headerlink" title="5. 管理包"></a>5. 管理包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看该环境中包和其版本的列表</span></span><br><span class="line">conda list</span><br><span class="line"><span class="comment"># 查找一个包</span></span><br><span class="line">conda search beautifulsoup4</span><br><span class="line"><span class="comment"># 必须告诉conda你要安装环境的名字（-n xsc）否则它将会被安装到当前环境中</span></span><br><span class="line">conda install --name xsc beautifulsoup4</span><br></pre></td></tr></table></figure>
+<h2 id="6-Anaconda-org安装一个包"><a href="#6-Anaconda-org安装一个包" class="headerlink" title="6. Anaconda.org安装一个包"></a>6. Anaconda.org安装一个包</h2><h2 id="7-pip命令来安装包"><a href="#7-pip命令来安装包" class="headerlink" title="7. pip命令来安装包"></a>7. pip命令来安装包</h2><h2 id="8-移除包、环境、或者conda"><a href="#8-移除包、环境、或者conda" class="headerlink" title="8. 移除包、环境、或者conda"></a>8. 移除包、环境、或者conda</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 xsc 环境中移除 iopro</span></span><br><span class="line">conda remove -n xsc iopro</span><br><span class="line"><span class="comment"># 移除环境</span></span><br><span class="line"><span class="comment"># 不再需要 xsc 环境了，所以输入以下命令：</span></span><br><span class="line">conda remove -n xsc --all</span><br><span class="line"><span class="comment"># 删除conda</span></span><br><span class="line"><span class="comment"># Linux，OS X：移除Anaconda 或 Miniconda 安装文件夹</span></span><br><span class="line">rm -rf ~/miniconda OR  rm -rf ~/anaconda</span><br><span class="line"><span class="comment"># Windows：</span></span><br><span class="line">去控制面板，点击“添加或删除程序”，选择“Python2.7（Anaconda）”或“Python2.7（Miniconda）”并点击删除程序。</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/11/Python易错总结/" rel="next" title="Python易错总结">
+                <i class="fa fa-chevron-left"></i> Python易错总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">行者</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、基本命令"><span class="nav-text">一、基本命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-相对路径："><span class="nav-text">1.1 相对路径：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-绝对路径："><span class="nav-text">1.2 绝对路径：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-浏览文件夹下内容："><span class="nav-text">1.3 浏览文件夹下内容：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-创建文件："><span class="nav-text">1.4 创建文件：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-复制文件："><span class="nav-text">1.5 复制文件：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-移动文件："><span class="nav-text">1.6 移动文件：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-删除文件："><span class="nav-text">1.7 删除文件：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-8-修改文件："><span class="nav-text">1.8 修改文件：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-9-显示当前路径"><span class="nav-text">1.9 显示当前路径</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、文件权限"><span class="nav-text">二、文件权限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、VMware安装Ubuntu"><span class="nav-text">三、VMware安装Ubuntu</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、Anaconda环境管理"><span class="nav-text">四、Anaconda环境管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-管理conda"><span class="nav-text">1. 管理conda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-创建并激活一个环境"><span class="nav-text">2. 创建并激活一个环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-列出所有的环境"><span class="nav-text">3. 列出所有的环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-管理Python"><span class="nav-text">4. 管理Python</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-管理包"><span class="nav-text">5. 管理包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Anaconda-org安装一个包"><span class="nav-text">6. Anaconda.org安装一个包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-pip命令来安装包"><span class="nav-text">7. pip命令来安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-移除包、环境、或者conda"><span class="nav-text">8. 移除包、环境、或者conda</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">行者</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
