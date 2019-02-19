@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="1 RNN1.1 前向传播对于序列数据，使用标准神经网络存在以下问题：  对于不同的示例，输入和输出可能有不同的长度，因此输入层和输出层的神经元数量无法固定。 从输入文本的不同位置学到的同一特征无法共享。 模型中的参数太多，计算量太大。  为了解决这些问题，引入循环神经网络（Recurrent Neural Network，RNN）。一种循环神经网络的结构如下图所示： RNN的网络结构和神经网络一">
+<meta name="description" content="摘要：RNN, GRU, LSTM">
 <meta name="keywords" content="NLP,DeepLearning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="序列模型学习笔记">
 <meta property="og:url" content="http://yoursite.com/2018/12/07/序列模型学习笔记/index.html">
 <meta property="og:site_name" content="行者">
-<meta property="og:description" content="1 RNN1.1 前向传播对于序列数据，使用标准神经网络存在以下问题：  对于不同的示例，输入和输出可能有不同的长度，因此输入层和输出层的神经元数量无法固定。 从输入文本的不同位置学到的同一特征无法共享。 模型中的参数太多，计算量太大。  为了解决这些问题，引入循环神经网络（Recurrent Neural Network，RNN）。一种循环神经网络的结构如下图所示： RNN的网络结构和神经网络一">
+<meta property="og:description" content="摘要：RNN, GRU, LSTM">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/12/07/序列模型学习笔记/rnn0.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/12/07/序列模型学习笔记/RNN.png">
@@ -99,10 +99,10 @@
 <meta property="og:image" content="http://yoursite.com/2018/12/07/序列模型学习笔记/gru3.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/12/07/序列模型学习笔记/gru.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/12/07/序列模型学习笔记/gru2.jpg">
-<meta property="og:updated_time" content="2018-12-07T15:46:41.579Z">
+<meta property="og:updated_time" content="2019-02-19T08:11:16.285Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="序列模型学习笔记">
-<meta name="twitter:description" content="1 RNN1.1 前向传播对于序列数据，使用标准神经网络存在以下问题：  对于不同的示例，输入和输出可能有不同的长度，因此输入层和输出层的神经元数量无法固定。 从输入文本的不同位置学到的同一特征无法共享。 模型中的参数太多，计算量太大。  为了解决这些问题，引入循环神经网络（Recurrent Neural Network，RNN）。一种循环神经网络的结构如下图所示： RNN的网络结构和神经网络一">
+<meta name="twitter:description" content="摘要：RNN, GRU, LSTM">
 <meta name="twitter:image" content="http://yoursite.com/2018/12/07/序列模型学习笔记/rnn0.jpg">
 
 
@@ -387,7 +387,9 @@
       
 
       
-        <h1 id="1-RNN"><a href="#1-RNN" class="headerlink" title="1 RNN"></a>1 RNN</h1><h2 id="1-1-前向传播"><a href="#1-1-前向传播" class="headerlink" title="1.1 前向传播"></a>1.1 前向传播</h2><p>对于序列数据，使用标准神经网络存在以下问题：</p>
+        <p>摘要：RNN, GRU, LSTM</p>
+<a id="more"></a>
+<h1 id="1-RNN"><a href="#1-RNN" class="headerlink" title="1 RNN"></a>1 RNN</h1><h2 id="1-1-前向传播"><a href="#1-1-前向传播" class="headerlink" title="1.1 前向传播"></a>1.1 前向传播</h2><p>对于序列数据，使用标准神经网络存在以下问题：</p>
 <ul>
 <li>对于不同的示例，输入和输出可能有不同的长度，因此输入层和输出层的神经元数量无法固定。</li>
 <li>从输入文本的不同位置学到的同一特征无法共享。</li>
@@ -565,7 +567,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
